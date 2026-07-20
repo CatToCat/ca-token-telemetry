@@ -192,19 +192,19 @@
         },
         {
           "cacheCreationTokens": 0,
+          "cacheReadTokens": 684032,
+          "cost": 0.008004589600000002,
+          "inputTokens": 30101,
+          "modelName": "deepseek-v4-flash-free",
+          "outputTokens": 5048
+        },
+        {
+          "cacheCreationTokens": 0,
           "cacheReadTokens": 627520,
           "cost": 0,
           "inputTokens": 8172,
           "modelName": "mimo-v2.5-free",
           "outputTokens": 3658
-        },
-        {
-          "cacheCreationTokens": 0,
-          "cacheReadTokens": 684032,
-          "cost": 0,
-          "inputTokens": 30101,
-          "modelName": "deepseek-v4-flash-free",
-          "outputTokens": 5048
         }
       ],
       "modelsUsed": [
@@ -213,7 +213,7 @@
         "deepseek-v4-flash-free"
       ],
       "outputTokens": 277282,
-      "totalCost": 29.756396500000008,
+      "totalCost": 29.764401089600007,
       "totalTokens": 32344437
     },
     {
@@ -352,7 +352,7 @@
         {
           "cacheCreationTokens": 0,
           "cacheReadTokens": 77604992,
-          "cost": 0,
+          "cost": 1.1145611176,
           "inputTokens": 5757313,
           "modelName": "deepseek-v4-flash-free",
           "outputTokens": 191592
@@ -363,7 +363,7 @@
         "deepseek-v4-flash-free"
       ],
       "outputTokens": 276575,
-      "totalCost": 18.12985550000001,
+      "totalCost": 19.244416617600002,
       "totalTokens": 104983934
     },
     {
@@ -391,7 +391,7 @@
         {
           "cacheCreationTokens": 0,
           "cacheReadTokens": 409984,
-          "cost": 0,
+          "cost": 0.0115198552,
           "inputTokens": 67837,
           "modelName": "deepseek-v4-flash-free",
           "outputTokens": 1038
@@ -403,7 +403,7 @@
         "gpt-5.1-chat-gus"
       ],
       "outputTokens": 255822,
-      "totalCost": 115.02582225000002,
+      "totalCost": 115.03734210520003,
       "totalTokens": 192492156
     },
     {
@@ -452,19 +452,19 @@
         },
         {
           "cacheCreationTokens": 0,
+          "cacheReadTokens": 6768000,
+          "cost": 0.06052256,
+          "inputTokens": 246080,
+          "modelName": "deepseek-v4-flash-free",
+          "outputTokens": 14209
+        },
+        {
+          "cacheCreationTokens": 0,
           "cacheReadTokens": 2160640,
           "cost": 0,
           "inputTokens": 166000,
           "modelName": "mimo-v2.5-free",
           "outputTokens": 12840
-        },
-        {
-          "cacheCreationTokens": 0,
-          "cacheReadTokens": 6768000,
-          "cost": 0,
-          "inputTokens": 246080,
-          "modelName": "deepseek-v4-flash-free",
-          "outputTokens": 14209
         }
       ],
       "modelsUsed": [
@@ -474,38 +474,38 @@
         "deepseek-v4-flash-free"
       ],
       "outputTokens": 232191,
-      "totalCost": 29.843842499999997,
+      "totalCost": 29.90436506,
       "totalTokens": 48662004
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 11250944,
+      "cacheReadTokens": 13411584,
       "date": "2026-07-21",
-      "inputTokens": 19061,
+      "inputTokens": 21540,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 11250944,
-          "cost": 0,
-          "inputTokens": 19061,
+          "cacheReadTokens": 13411584,
+          "cost": 0.048489235200000015,
+          "inputTokens": 21540,
           "modelName": "deepseek-v4-flash-free",
-          "outputTokens": 16289
+          "outputTokens": 17958
         }
       ],
       "modelsUsed": [
         "deepseek-v4-flash-free"
       ],
-      "outputTokens": 16289,
-      "totalCost": 0,
-      "totalTokens": 11296205
+      "outputTokens": 17958,
+      "totalCost": 0.048489235200000015,
+      "totalTokens": 13461414
     }
   ],
   "totals": {
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 923698952,
-    "inputTokens": 42997520,
-    "outputTokens": 4480524,
-    "totalCost": 685.0663227500002,
-    "totalTokens": 971343245
+    "cacheReadTokens": 925859592,
+    "inputTokens": 42999999,
+    "outputTokens": 4482193,
+    "totalCost": 686.3094201076002,
+    "totalTokens": 973508454
   }
 }
