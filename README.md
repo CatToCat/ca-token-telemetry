@@ -90,6 +90,30 @@ Manually trigger one run:
 launchctl start com.user.catoken-telemetry
 ```
 
+Check whether the job is loaded and its last exit status:
+
+```bash
+launchctl list com.user.catoken-telemetry
+```
+
+Check the configured schedule (`Hour = 4`, `Minute = 0`):
+
+```bash
+plutil -p ~/Library/LaunchAgents/com.user.catoken-telemetry.plist
+```
+
+Check the actual start time of recent runs from the device log:
+
+```bash
+tail -n 50 logs/<device>/<YYYYMMDD>.log
+```
+
+For example:
+
+```bash
+tail -n 50 logs/m1pro-32gb/20260721.log
+```
+
 Uninstall:
 
 ```bash
