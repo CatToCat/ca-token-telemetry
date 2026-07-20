@@ -479,33 +479,33 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 9159168,
+      "cacheReadTokens": 9982464,
       "date": "2026-07-21",
-      "inputTokens": 15960,
+      "inputTokens": 17097,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 9159168,
+          "cacheReadTokens": 9982464,
           "cost": 0,
-          "inputTokens": 15960,
+          "inputTokens": 17097,
           "modelName": "deepseek-v4-flash-free",
-          "outputTokens": 13938
+          "outputTokens": 15223
         }
       ],
       "modelsUsed": [
         "deepseek-v4-flash-free"
       ],
-      "outputTokens": 13938,
+      "outputTokens": 15223,
       "totalCost": 0,
-      "totalTokens": 9197154
+      "totalTokens": 10023397
     }
   ],
   "totals": {
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 921607176,
-    "inputTokens": 42994419,
-    "outputTokens": 4478173,
+    "cacheReadTokens": 922430472,
+    "inputTokens": 42995556,
+    "outputTokens": 4479458,
     "totalCost": 685.0663227500002,
-    "totalTokens": 969244194
+    "totalTokens": 970070437
   }
 }
