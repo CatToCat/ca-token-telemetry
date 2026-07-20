@@ -1,0 +1,13 @@
+{
+  "generated": "2026-07-20 23:44",
+  "devices": [
+    {
+      "id": "r5-2600-gtx1660",
+      "sources": [
+        "claude",
+        "opencode"
+      ],
+      "updated": "2026-07-20 23:44"
+    }
+  ]
+}

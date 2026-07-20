@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CA Token Telemetry</title>
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="assets/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #f4f6fa;
+    --panel: #ffffff;
+    --panel-2: #f0f3f8;
+    --line: #e2e7f0;
+    --line-2: #d3dae6;
+    --txt: #1a2230;
+    --muted: #5f6b7d;
+    --dim: #97a1b2;
+    --primary: #2f6bff;
+    --cyan: #0aa89a;
+    --amber: #d9820a;
+    --violet: #7d4dea;
+    --green: #16a35a;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--txt);
+    font-family: "Inter", "Segoe UI", "Microsoft YaHei", sans-serif;
+    line-height: 1.5;
+    background-image:
+      radial-gradient(circle at 15% -10%, rgba(47,107,255,.08), transparent 45%),
+      radial-gradient(circle at 90% 0%, rgba(10,168,154,.06), transparent 40%);
+    background-attachment: fixed;
+  }
+  .mono { font-family: "JetBrains Mono", monospace; font-variant-numeric: tabular-nums; }
+  .wrap { max-width: 1400px; margin: 0 auto; padding: 0 32px 64px; }
+
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(10,168,154,.5);} 70%{box-shadow:0 0 0 7px rgba(10,168,154,0);} 100%{box-shadow:0 0 0 0 rgba(10,168,154,0);} }
+  header { padding: 36px 0 4px; }
+  h1 { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: clamp(30px, 5vw, 46px); margin: 0; letter-spacing: -.02em; line-height:1.15; }
+  h1.title { display: flex; align-items: center; gap: 12px; }
+  .title-icon { width: clamp(32px, 5vw, 44px); height: clamp(32px, 5vw, 44px); border-radius: 11px; box-shadow: 0 4px 14px rgba(47,107,255,.28); flex: none; }
+  .meta {
+    color: var(--muted); font-size: 12px; margin-top: 10px;
+    font-family: "JetBrains Mono", monospace;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .meta .live {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--cyan); text-transform: uppercase; letter-spacing: .16em; font-size: 10px;
+  }
+  .meta .pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 0 rgba(10,168,154,.6); animation: pulse 2.4s infinite; flex-shrink:0; }
+  .meta .dott { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); opacity: .4; flex-shrink:0; }
+
+  .gauges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 24px 0; }
+  .gauge {
+    background: linear-gradient(180deg, var(--panel), var(--panel-2));
+    border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; position: relative; overflow: hidden;
+    box-shadow: 0 1px 2px rgba(26,34,48,.04), 0 4px 16px rgba(26,34,48,.04);
+  }
+  .gauge::after { content:""; position:absolute; left:0; top:0; height:2px; width:100%; background: var(--accent, var(--primary)); opacity:.7; }
+  .gauge .lbl { font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color: var(--muted); }
+  .gauge .val { font-family:"JetBrains Mono",monospace; font-weight:700; font-size: clamp(26px,3.4vw,38px); margin-top:8px; letter-spacing:-.02em; }
+  .gauge.cost { --accent: var(--amber); }
+  .gauge.cost .val { color: var(--amber); }
+  .gauge.tok { --accent: var(--cyan); }
+
+  .controls {
+    display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 18px; margin-bottom: 22px; box-shadow: 0 4px 16px rgba(26,34,48,.05);
+  }
+  .ctrl { display: flex; flex-direction: column; gap: 6px; }
+  .ctrl > label { font-family:"JetBrains Mono",monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color: var(--muted); }
+  .seg { display: inline-flex; background: var(--panel-2); border:1px solid var(--line-2); border-radius: 9px; padding: 3px; flex-wrap: wrap; }
+  .seg button {
+    border: none; background: transparent; color: var(--muted); cursor: pointer;
+    font-family:"JetBrains Mono",monospace; font-size: 12.5px; font-weight:500;
+    padding: 7px 14px; border-radius: 6px; transition: all .15s;
+  }
+  .seg button:hover { color: var(--txt); }
+  .seg button.on { background: var(--primary); color: #fff; box-shadow: 0 2px 10px rgba(47,107,255,.28); }
+  .seg.metric button.on { background: var(--amber); color: #fff; box-shadow: 0 2px 10px rgba(217,130,10,.28); }
+  input[type=date], select {
+    background: var(--panel); border:1px solid var(--line-2); color: var(--txt);
+    border-radius: 8px; padding: 8px 11px; font-family:"JetBrains Mono",monospace; font-size: 13px;
+    color-scheme: light; min-width: 150px;
+  }
+  select { cursor: pointer; }
+  input:focus, select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(47,107,255,.16); }
+  .grow { flex: 1 1 280px; }
+  .reset {
+    margin-left: auto; align-self: flex-end; background: transparent; border:1px solid var(--line-2);
+    color: var(--muted); border-radius: 8px; padding: 8px 14px; cursor: pointer;
+    font-family:"JetBrains Mono",monospace; font-size:12px; transition: all .15s;
+  }
+  .reset:hover { color: var(--txt); border-color: var(--dim); }
+
+  .chart-card { background: var(--panel); border:1px solid var(--line); border-radius: 16px; padding: 22px 22px 14px; margin-bottom: 22px; box-shadow: 0 4px 20px rgba(26,34,48,.05); }
+  .chart-head { display:flex; justify-content: space-between; align-items:baseline; margin-bottom: 14px; }
+  .chart-head h2 { font-family:"Space Grotesk",sans-serif; font-size: 16px; margin:0; font-weight:500; }
+  .chart-head .hint { color: var(--dim); font-size:12px; font-family:"JetBrains Mono",monospace; }
+  .chart-box { position: relative; height: 360px; }
+
+  .table-card { background: var(--panel); border:1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(26,34,48,.05); }
+  .table-head { display:flex; justify-content:space-between; align-items:center; padding: 16px 20px; border-bottom:1px solid var(--line); }
+  .table-head h2 { font-family:"Space Grotesk",sans-serif; font-size:16px; margin:0; font-weight:500; }
+  .table-head .count { color: var(--muted); font-size:12px; font-family:"JetBrains Mono",monospace; }
+  .scroll { overflow-x: auto; }
+  table { width:100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    font-family:"JetBrains Mono",monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+    color: var(--muted); font-weight:500; text-align: right; padding: 12px 14px; background: var(--panel-2);
+    cursor: pointer; user-select: none; white-space: nowrap;
+  }
+  thead th:first-child, thead th.l { text-align:left; }
+  thead th:hover { color: var(--txt); }
+  thead th .arw { opacity:.4; margin-left:4px; }
+  thead th.sorted .arw { opacity:1; color: var(--primary); }
+  tbody td { padding: 12px 16px; border-bottom:1px solid var(--line); text-align: right; font-family:"JetBrains Mono",monospace; }
+  tbody td.l { text-align:left; }
+  tbody tr:hover td { background: var(--panel-2); }
+  .tool-tag { font-family:"JetBrains Mono",monospace; font-size:10.5px; padding: 2px 8px; border-radius: 20px; letter-spacing:.03em; }
+  .tag-oc { background: rgba(88,152,244,.10); color: #5898f4; border:1px solid rgba(88,152,244,.25); }
+  .tag-cc { background: rgba(217,119,87,.12); color: #c15f3c; border:1px solid rgba(217,119,87,.32); }
+  .dev-tag { font-family:"JetBrains Mono",monospace; font-size:10px; padding: 2px 7px; border-radius: 5px; background: var(--panel-2); border:1px solid var(--line-2); color: var(--muted); }
+  .models { color: var(--dim); font-size: 11px; }
+  td.cost { color: var(--amber); font-weight:500; }
+  td.total { color: var(--txt); font-weight:500; }
+  .empty { text-align:center; color: var(--muted); padding: 40px; font-family:"JetBrains Mono",monospace; }
+  /* summary strip at top of the table card */
+  .table-summary { display:flex; flex-wrap:wrap; gap:10px 20px; padding: 14px 20px; border-bottom:1px solid var(--line); background: var(--panel-2); }
+  .table-summary .cell { display:flex; flex-direction:column; gap:2px; min-width:100px; flex:1 1 auto; }
+  .table-summary .k { font-family:"JetBrains Mono",monospace; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color: var(--muted); }
+  .table-summary .v { font-family:"JetBrains Mono",monospace; font-size:15px; font-weight:600; }
+  .table-summary .v.cost { color: var(--amber); }
+  /* pagination bar */
+  .pager { display:flex; align-items:center; justify-content:flex-end; gap:10px; padding: 12px 20px; border-top:1px solid var(--line); font-family:"JetBrains Mono",monospace; font-size:12px; color: var(--muted); }
+  .pager button { background: var(--panel); border:1px solid var(--line-2); color: var(--txt); border-radius:7px; padding:6px 12px; cursor:pointer; font-family:"JetBrains Mono",monospace; font-size:12px; transition: all .15s; }
+  .pager button:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+  .pager button:disabled { opacity:.4; cursor:default; }
+  .pager .info { min-width: 120px; text-align:center; }
+  .pager select { min-width:auto; padding:5px 8px; }
+  .status { text-align:center; color: var(--muted); padding: 60px 20px; font-family:"JetBrains Mono",monospace; font-size: 14px; }
+  .status.err { color: #c0392b; }
+  footer { color: var(--dim); font-size:12px; text-align:center; margin-top: 34px; font-family:"JetBrains Mono",monospace; }
+  @media (prefers-reduced-motion: reduce){ .meta .pulse{animation:none;} html{scroll-behavior:auto;} }
+  @media (max-width:1200px){ .gauges{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:800px){
+    .gauges{grid-template-columns:repeat(2,1fr);}
+    .wrap{padding:0 16px 48px;}
+    header{padding:24px 0 4px;}
+    .chart-box{height:260px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 class="title"><img class="title-icon" src="assets/icon.svg" alt="" width="40" height="40">Coding Agent Token Telemetry</h1>
+    <div class="meta" id="meta"><span class="live"><span class="pulse"></span>Live</span><span class="dott"></span><span>Loading data…</span></div>
+  </header>
+
+  <div id="app" style="display:none">
+    <div class="gauges" id="gauges"></div>
+
+    <div class="controls">
+      <div class="ctrl">
+        <label>Device</label>
+        <div class="seg" id="segDevice"></div>
+      </div>
+      <div class="ctrl">
+        <label>Source</label>
+        <div class="seg" id="segTool">
+          <button data-tool="all" class="on">All</button>
+        </div>
+      </div>
+      <div class="ctrl">
+        <label>Metric</label>
+        <div class="seg metric" id="segMetric">
+          <button data-metric="cost" class="on">Cost</button>
+          <button data-metric="total">Tokens</button>
+        </div>
+      </div>
+      <div class="ctrl"><label>From</label><input type="date" id="from"></div>
+      <div class="ctrl"><label>To</label><input type="date" id="to"></div>
+      <div class="ctrl grow"><label>Model</label>
+        <select id="q"><option value="">All models</option></select>
+      </div>
+      <button class="reset" id="reset">Reset</button>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-head">
+        <h2 id="chartTitle">Daily cost burn rate</h2>
+        <span class="hint" id="chartHint">stacked by source</span>
+      </div>
+      <div class="chart-box"><canvas id="chart"></canvas></div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-head">
+        <h2>Daily breakdown</h2>
+        <span class="count" id="rowCount"></span>
+      </div>
+      <div class="table-summary" id="tableSummary"></div>
+      <div class="scroll">
+        <table>
+          <thead><tr>
+            <th class="l" data-k="date">Date<span class="arw">&#9662;</span></th>
+            <th class="l" data-k="device">Device<span class="arw">&#9662;</span></th>
+            <th class="l" data-k="tool">Source<span class="arw">&#9662;</span></th>
+            <th data-k="input">Input<span class="arw">&#9662;</span></th>
+            <th data-k="output">Output<span class="arw">&#9662;</span></th>
+            <th data-k="cacheCreate">Cache Write<span class="arw">&#9662;</span></th>
+            <th data-k="cacheRead">Cache Read<span class="arw">&#9662;</span></th>
+            <th data-k="total">Total<span class="arw">&#9662;</span></th>
+            <th data-k="cost">Cost<span class="arw">&#9662;</span></th>
+          </tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <div class="pager" id="pager"></div>
+    </div>
+  </div>
+
+  <div class="status" id="status">Loading data…</div>
+  <footer>ccusage &middot; token telemetry console &middot; data is local &amp; read-only</footer>
+</div>
+
+<script>
+const SOURCE_LABEL = { opencode: "OpenCode", claude: "Claude Code" };
+const TOOL_COLORS = { "OpenCode": "#5898f4", "Claude Code": "#d97757" };
+const TOOL_TAG = { "OpenCode": "tag-oc", "Claude Code": "tag-cc" };
+
+let ALL = [];   // flattened rows: {date, device, tool, input, output, cacheCreate, cacheRead, total, cost, models[]}
+const state = { device: "all", tool: "all", metric: "cost", from: null, to: null, q: "", sortK: "date", sortDir: -1, page: 0 };
+const PAGE_SIZE = 15;
+
+const fmtInt = n => Math.round(n).toLocaleString("en-US");
+const fmtMoney = n => "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const fmtBig = n => n >= 1e9 ? (n/1e9).toFixed(2)+"B" : n >= 1e6 ? (n/1e6).toFixed(1)+"M" : fmtInt(n);
+
+/* ---------- Data loading ---------- */
+async function loadAll() {
+  const manifest = await fetch("data/manifest.json", { cache: "no-store" }).then(r => {
+    if (!r.ok) throw new Error("manifest.json not found (HTTP " + r.status + ")");
+    return r.json();
+  });
+  const rows = [];
+  const devices = manifest.devices || [];
+  for (const dev of devices) {
+    for (const src of dev.sources) {
+      try {
+        const data = await fetch(`data/${dev.id}/${src}.json`, { cache: "no-store" }).then(r => r.ok ? r.json() : null);
+        if (!data || !data.daily) continue;
+        const toolName = SOURCE_LABEL[src] || src;
+        for (const d of data.daily) {
+          rows.push({
+            date: d.date, device: dev.id, tool: toolName,
+            models: d.modelsUsed || [],
+            input: d.inputTokens || 0, output: d.outputTokens || 0,
+            cacheCreate: d.cacheCreationTokens || 0, cacheRead: d.cacheReadTokens || 0,
+            total: d.totalTokens || 0, cost: d.totalCost || 0,
+          });
+        }
+      } catch (e) { /* skip missing source */ }
+    }
+  }
+  return { rows, manifest };
+}
+
+/* ---------- Filtering ---------- */
+function filtered() {
+  return ALL.filter(r => {
+    if (state.device !== "all" && r.device !== state.device) return false;
+    if (state.tool !== "all" && r.tool !== state.tool) return false;
+    if (state.from && r.date < state.from) return false;
+    if (state.to && r.date > state.to) return false;
+    if (state.q && !r.models.includes(state.q)) return false;
+    return true;
+  });
+}
+
+/* ---------- Gauges ---------- */
+function renderGauges(rows) {
+  const sum = k => rows.reduce((a, r) => a + r[k], 0);
+  const cost = sum("cost"), tok = sum("total"), inp = sum("input"), out = sum("output");
+  document.getElementById("gauges").innerHTML = `
+    <div class="gauge cost"><div class="lbl">Total cost</div><div class="val" data-n="${cost}" data-money="1">$0.00</div></div>
+    <div class="gauge tok"><div class="lbl">Total tokens</div><div class="val" data-n="${tok}" data-big="1">0</div></div>
+    <div class="gauge"><div class="lbl">Input</div><div class="val" data-n="${inp}" data-big="1">0</div></div>
+    <div class="gauge"><div class="lbl">Output</div><div class="val" data-n="${out}" data-big="1">0</div></div>`;
+  animateCounts();
+}
+function animateCounts() {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".gauge .val").forEach(el => {
+    const target = +el.dataset.n, money = el.dataset.money, big = el.dataset.big;
+    const render = v => el.textContent = money ? fmtMoney(v) : big ? fmtBig(Math.round(v)) : fmtInt(v);
+    if (reduce) return render(target);
+    const dur = 700, t0 = performance.now();
+    (function step(t){ const p = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-p,3); render(target*e); if (p<1) requestAnimationFrame(step); })(t0);
+  });
+}
+
+/* ---------- Chart ---------- */
+let chart;
+function renderChart(rows) {
+  const metric = state.metric;
+  document.getElementById("chartTitle").textContent = metric === "cost" ? "Daily cost burn rate" : "Daily token volume";
+  // group lines by tool (across selected devices)
+  const dates = [...new Set(rows.map(r => r.date))].sort();
+  const toolsShown = state.tool === "all" ? [...new Set(ALL.map(r => r.tool))].sort() : [state.tool];
+  document.getElementById("chartHint").textContent = "stacked by source";
+  const datasets = toolsShown.map(tool => {
+    const c = TOOL_COLORS[tool] || "#0aa89a";
+    const map = {};
+    rows.filter(r => r.tool === tool).forEach(r => map[r.date] = (map[r.date]||0) + r[metric]);
+    return {
+      label: tool, data: dates.map(d => map[d] || 0),
+      borderColor: c, backgroundColor: c + "22", fill: true, tension: .32,
+      borderWidth: 2.5, pointRadius: 2, pointHoverRadius: 5, pointBackgroundColor: c,
+    };
+  });
+  const cfg = {
+    type: "line", data: { labels: dates, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { labels: { color: "#1a2230", font: { family: "JetBrains Mono", size: 12 }, boxWidth: 12, boxHeight: 12, usePointStyle: true } },
+        tooltip: {
+          backgroundColor: "#ffffff", borderColor: "#d3dae6", borderWidth: 1,
+          titleColor: "#5f6b7d", bodyColor: "#1a2230", padding: 12, cornerRadius: 8,
+          titleFont: { family: "JetBrains Mono" }, bodyFont: { family: "JetBrains Mono" },
+          callbacks: { label: c => ` ${c.dataset.label}: ` + (metric==="cost" ? fmtMoney(c.parsed.y) : fmtInt(c.parsed.y)) }
+        }
+      },
+      scales: {
+        x: { stacked: true, grid: { color: "#e2e7f0" }, ticks: { color: "#5f6b7d", font: { family: "JetBrains Mono", size: 11 }, maxRotation: 0, autoSkip: true } },
+        y: { stacked: true, grid: { color: "#e2e7f0" }, ticks: { color: "#5f6b7d", font: { family: "JetBrains Mono", size: 11 }, callback: v => metric==="cost" ? "$"+v : fmtBig(v) } }
+      },
+      animation: matchMedia("(prefers-reduced-motion: reduce)").matches ? false : { duration: 600 }
+    }
+  };
+  if (chart) { chart.data = cfg.data; chart.options = cfg.options; chart.update(); }
+  else chart = new Chart(document.getElementById("chart"), cfg);
+}
+
+/* ---------- Table ---------- */
+function renderTable(rows) {
+  const sorted = [...rows].sort((a,b) => {
+    let x = a[state.sortK], y = b[state.sortK];
+    if (["date","tool","device"].includes(state.sortK)) { x=""+x; y=""+y; return x<y?-state.sortDir:x>y?state.sortDir:0; }
+    return (x-y)*state.sortDir;
+  });
+  // summary strip
+  const S = k => sorted.reduce((a,r)=>a+r[k],0);
+  const totalDays = new Set(sorted.map(r=>r.date)).size;
+  const totalDevices = new Set(sorted.map(r=>r.device)).size;
+  document.getElementById("tableSummary").innerHTML = sorted.length ? `
+    <div class="cell"><span class="k">Rows</span><span class="v">${sorted.length}</span></div>
+    <div class="cell"><span class="k">Days</span><span class="v">${totalDays}</span></div>
+    <div class="cell"><span class="k">Devices</span><span class="v">${totalDevices}</span></div>
+    <div class="cell"><span class="k">Input</span><span class="v">${fmtInt(S("input"))}</span></div>
+    <div class="cell"><span class="k">Output</span><span class="v">${fmtInt(S("output"))}</span></div>
+    <div class="cell"><span class="k">Cache Write</span><span class="v">${fmtInt(S("cacheCreate"))}</span></div>
+    <div class="cell"><span class="k">Cache Read</span><span class="v">${fmtInt(S("cacheRead"))}</span></div>
+    <div class="cell"><span class="k">Total</span><span class="v">${fmtInt(S("total"))}</span></div>
+    <div class="cell"><span class="k">Cost</span><span class="v cost">${fmtMoney(S("cost"))}</span></div>
+  ` : "";
+  // pagination
+  const totalPages = Math.max(1, Math.ceil(sorted.length / PAGE_SIZE));
+  if (state.page >= totalPages) state.page = totalPages - 1;
+  const pageStart = state.page * PAGE_SIZE;
+  const pageRows = sorted.slice(pageStart, pageStart + PAGE_SIZE);
+  // render rows
+  const tb = document.getElementById("tbody");
+  if (!pageRows.length) {
+    tb.innerHTML = `<tr><td colspan="9" class="empty">${sorted.length ? "No matching records" : "No data yet"}</td></tr>`;
+  } else {
+    tb.innerHTML = pageRows.map(r => `
+      <tr>
+        <td class="l">${r.date}</td>
+        <td class="l"><span class="dev-tag">${r.device}</span></td>
+        <td class="l"><span class="tool-tag ${TOOL_TAG[r.tool]||''}">${r.tool}</span><div class="models">${r.models.join(", ")}</div></td>
+        <td>${fmtInt(r.input)}</td>
+        <td>${fmtInt(r.output)}</td>
+        <td>${fmtInt(r.cacheCreate)}</td>
+        <td>${fmtInt(r.cacheRead)}</td>
+        <td class="total">${fmtInt(r.total)}</td>
+        <td class="cost">${fmtMoney(r.cost)}</td>
+      </tr>`).join("");
+  }
+  document.getElementById("rowCount").textContent = sorted.length + " rows";
+  // pager
+  const pg = document.getElementById("pager");
+  if (sorted.length > PAGE_SIZE) {
+    const rangeStart = pageStart + 1;
+    const rangeEnd = Math.min(pageStart + PAGE_SIZE, sorted.length);
+    pg.innerHTML = `
+      <button id="pgFirst" ${state.page===0?"disabled":""}>&laquo;</button>
+      <button id="pgPrev"  ${state.page===0?"disabled":""}>&lsaquo;</button>
+      <span class="info">${rangeStart}–${rangeEnd} of ${sorted.length}</span>
+      <button id="pgNext"  ${state.page>=totalPages-1?"disabled":""}>&rsaquo;</button>
+      <button id="pgLast"  ${state.page>=totalPages-1?"disabled":""}>&raquo;</button>`;
+    document.getElementById("pgFirst").onclick = ()=>{ state.page=0; renderTable(rows); };
+    document.getElementById("pgPrev").onclick  = ()=>{ state.page=Math.max(0,state.page-1); renderTable(rows); };
+    document.getElementById("pgNext").onclick  = ()=>{ state.page=Math.min(totalPages-1,state.page+1); renderTable(rows); };
+    document.getElementById("pgLast").onclick  = ()=>{ state.page=totalPages-1; renderTable(rows); };
+  } else {
+    pg.innerHTML = sorted.length ? `<span class="info">${sorted.length} of ${sorted.length}</span>` : "";
+  }
+  document.querySelectorAll("thead th").forEach(th => {
+    th.classList.toggle("sorted", th.dataset.k === state.sortK);
+    const a = th.querySelector(".arw"); if (a) a.textContent = th.dataset.k===state.sortK ? (state.sortDir>0?"\u25B4":"\u25BE") : "\u25BE";
+  });
+}
+
+function refresh() { const rows = filtered(); renderGauges(rows); renderChart(rows); renderTable(rows); }
+
+/* ---------- Build controls ---------- */
+function buildControls(manifest) {
+  // Device segmented buttons
+  const segDev = document.getElementById("segDevice");
+  const devs = [...new Set(ALL.map(r => r.device))].sort();
+  segDev.innerHTML = `<button data-device="all" class="on">All</button>` +
+    devs.map(d => `<button data-device="${d}">${d}</button>`).join("");
+  segDev.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    state.device = b.dataset.device;
+    segDev.querySelectorAll("button").forEach(x=>x.classList.toggle("on", x===b));
+    rebuildModelOptions(); refresh();
+  });
+
+  // Source segmented buttons (from data)
+  const segTool = document.getElementById("segTool");
+  const tools = [...new Set(ALL.map(r => r.tool))].sort();
+  segTool.innerHTML = `<button data-tool="all" class="on">All</button>` +
+    tools.map(t => `<button data-tool="${t}">${t}</button>`).join("");
+  segTool.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    state.tool = b.dataset.tool;
+    segTool.querySelectorAll("button").forEach(x=>x.classList.toggle("on", x===b));
+    refresh();
+  });
+
+  document.getElementById("segMetric").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    state.metric = b.dataset.metric;
+    document.querySelectorAll("#segMetric button").forEach(x=>x.classList.toggle("on", x===b));
+    renderChart(filtered());
+  });
+
+  document.getElementById("from").addEventListener("change", e => { state.from = e.target.value || null; refresh(); });
+  document.getElementById("to").addEventListener("change", e => { state.to = e.target.value || null; refresh(); });
+  document.getElementById("q").addEventListener("change", e => { state.q = e.target.value; refresh(); });
+
+  document.getElementById("reset").addEventListener("click", () => {
+    state.device="all"; state.tool="all"; state.metric="cost"; state.from=null; state.to=null; state.q="";
+    document.getElementById("from").value=""; document.getElementById("to").value=""; document.getElementById("q").value="";
+    segDev.querySelectorAll("button").forEach(x=>x.classList.toggle("on", x.dataset.device==="all"));
+    segTool.querySelectorAll("button").forEach(x=>x.classList.toggle("on", x.dataset.tool==="all"));
+    document.querySelectorAll("#segMetric button").forEach(x=>x.classList.toggle("on", x.dataset.metric==="cost"));
+    rebuildModelOptions(); refresh();
+  });
+
+  document.querySelectorAll("thead th").forEach(th => th.addEventListener("click", () => {
+    const k = th.dataset.k;
+    if (state.sortK === k) state.sortDir *= -1; else { state.sortK = k; state.sortDir = ["date","tool","device"].includes(k) ? 1 : -1; }
+    state.page = 0;
+    renderTable(filtered());
+  }));
+
+  // date bounds
+  const allDates = ALL.map(r=>r.date).sort();
+  if (allDates.length) {
+    document.getElementById("from").min = document.getElementById("to").min = allDates[0];
+    document.getElementById("from").max = document.getElementById("to").max = allDates[allDates.length-1];
+  }
+  rebuildModelOptions();
+}
+
+// model dropdown reflects models used within current device selection
+function rebuildModelOptions() {
+  const pool = ALL.filter(r => state.device === "all" || r.device === state.device);
+  const models = [...new Set(pool.flatMap(r => r.models))].filter(Boolean).sort();
+  const sel = document.getElementById("q");
+  const cur = state.q;
+  sel.innerHTML = `<option value="">All models</option>` + models.map(m => `<option value="${m}">${m}</option>`).join("");
+  if (models.includes(cur)) sel.value = cur; else { sel.value = ""; state.q = ""; }
+}
+
+/* ---------- Boot ---------- */
+(async function boot() {
+  try {
+    const { rows, manifest } = await loadAll();
+    ALL = rows;
+    if (!ALL.length) throw new Error("No usage rows found in any device folder.");
+    const devCount = new Set(ALL.map(r=>r.device)).size;
+    document.getElementById("meta").innerHTML =
+      `<span class="live"><span class="pulse"></span>Live</span><span class="dott"></span><span>Multi-Device Telemetry</span><span class="dott"></span><span>${devCount} device${devCount!==1?'s':''}</span><span class="dott"></span><span>${ALL.length} day-records</span><span class="dott"></span><span>updated ${manifest.generated}</span>`;
+    buildControls(manifest);
+    document.getElementById("status").style.display = "none";
+    document.getElementById("app").style.display = "block";
+    refresh();
+  } catch (e) {
+    const s = document.getElementById("status");
+    s.className = "status err";
+    s.innerHTML = "Failed to load data:<br>" + e.message +
+      "<br><br>If you opened this file directly (file://), run a local server instead:<br>" +
+      "<code>python -m http.server</code> in the ccusage folder, then open http://localhost:8000/";
+  }
+})();
+</script>
+</body>
+</html>

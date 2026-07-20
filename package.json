@@ -1,0 +1,17 @@
+{
+  "name": "ca-token-telemetry",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-device token usage & cost dashboard for AI coding agents (OpenCode / Claude Code).",
+  "scripts": {
+    "collect": "node src/collect.mjs",
+    "serve": "npx --yes serve web -l 8000"
+  },
+  "dependencies": {
+    "ccusage": "^20.0.17"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
