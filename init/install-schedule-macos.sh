@@ -9,7 +9,6 @@ set -euo pipefail
 REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 PLIST_PATH="$HOME/Library/LaunchAgents/com.user.catoken-telemetry.plist"
 LABEL="com.user.catoken-telemetry"
-LOG_DIR="$REPO_DIR/logs"
 USER_NAME="$(id -un)"
 
 NODE=$(command -v node)
@@ -24,8 +23,6 @@ if [ ! -f "$COLLECT" ]; then
   echo "Error: $COLLECT not found" >&2
   exit 1
 fi
-
-mkdir -p "$LOG_DIR"
 
 cat > "$PLIST_PATH" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
@@ -59,10 +56,6 @@ cat > "$PLIST_PATH" <<EOF
         <key>Minute</key>
         <integer>0</integer>
     </dict>
-    <key>StandardOutPath</key>
-    <string>${LOG_DIR}/collect-stdout.log</string>
-    <key>StandardErrorPath</key>
-    <string>${LOG_DIR}/collect-stderr.log</string>
     <key>RunAtLoad</key>
     <false/>
     <key>KeepAlive</key>
