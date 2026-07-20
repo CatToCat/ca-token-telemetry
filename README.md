@@ -62,12 +62,11 @@ cd web && py -m http.server 8000         # Windows
 │   ├── collect.mjs     # entry point: export → manifest → git
 │   ├── config.mjs      # paths, sources, hostname → device mapping
 │   ├── ccusage.mjs     # run ccusage, write per-source JSON
-│   ├── manifest.mjs    # rebuild web/data/manifest.json
+│   ├── manifest.mjs    # rebuild data/manifest.json
 │   ├── git.mjs         # commit / rebase / push
 │   └── util.mjs        # shared helpers (stamp)
-└── web/                # static dashboard (fetches data at runtime)
-    ├── index.html
-    ├── vercel.json
-    ├── assets/         # chart.js, icon
-    └── data/           # manifest.json + <device>/{opencode,claude}.json
+├── index.html          # static dashboard (fetches data at runtime)
+├── vercel.json
+├── assets/             # chart.js, icon
+└── data/               # manifest.json + <device>/{opencode,claude}.json
 ```

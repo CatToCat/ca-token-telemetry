@@ -17,7 +17,7 @@ const CCUSAGE_BIN = join(
  * Export one ccusage source as full-history daily JSON into deviceDir.
  * Falls back to an empty payload if the source has no data or fails.
  * @param {string} source - ccusage source id, e.g. "opencode" | "claude"
- * @param {string} deviceDir - absolute path to web/data/<device>/
+ * @param {string} deviceDir - absolute path to data/<device>/
  * @param {boolean} offline - use cached pricing instead of fetching
  * @returns {boolean} true if real data was written
  */

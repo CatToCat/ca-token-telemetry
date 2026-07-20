@@ -1,4 +1,4 @@
-// Rebuilds web/data/manifest.json by scanning device folders.
+// Rebuilds data/manifest.json by scanning device folders.
 // The static page reads this to know which devices/sources exist.
 import { readdirSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";

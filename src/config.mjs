@@ -6,9 +6,8 @@ import os from "node:os";
 // Repo root is the parent of src/.
 export const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-// Static site lives in web/; data is served from web/data/<device>/.
-export const WEB_DIR = join(REPO_ROOT, "web");
-export const DATA_DIR = join(WEB_DIR, "data");
+// Static site at repo root; data is served from data/<device>/.
+export const DATA_DIR = join(REPO_ROOT, "data");
 
 // ccusage sources to collect on every run.
 export const SOURCES = ["opencode", "claude"];

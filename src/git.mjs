@@ -1,5 +1,5 @@
 // Git publishing: stage data, commit, rebase onto remote, push.
-// Devices only write web/data/<device>/, so commits never conflict in content;
+// Devices only write data/<device>/, so commits never conflict in content;
 // `pull --rebase` cleanly replays this device's commit on top of others'.
 import { spawnSync } from "node:child_process";
 import { relative } from "node:path";
