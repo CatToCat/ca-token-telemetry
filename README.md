@@ -93,6 +93,18 @@ launchctl start com.user.catoken-telemetry
 Logs are written to:
 
 ```text
+logs/<device>/<YYYYMMDD>.log
+```
+
+For example, the current `m1pro-32gb` machine writes to:
+
+```text
+logs/m1pro-32gb/20260721.log
+```
+
+The launchd wrapper still keeps its stdout/stderr in the repo `logs/` root:
+
+```text
 logs/collect-stdout.log
 logs/collect-stderr.log
 ```
