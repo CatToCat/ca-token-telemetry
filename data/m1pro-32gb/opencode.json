@@ -386,7 +386,7 @@
         {
           "cacheCreationTokens": 0,
           "cacheReadTokens": 8832,
-          "cost": 0.0013202896,
+          "cost": 0,
           "inputTokens": 8744,
           "modelName": "deepseek-v4-flash-free",
           "outputTokens": 151
@@ -398,7 +398,7 @@
         "deepseek-v4-flash-free"
       ],
       "outputTokens": 59223,
-      "totalCost": 2.5395723896,
+      "totalCost": 2.5382521,
       "totalTokens": 2609973
     },
     {
@@ -429,7 +429,7 @@
     "cacheReadTokens": 158887334,
     "inputTokens": 6916797,
     "outputTokens": 996816,
-    "totalCost": 137.47117888959997,
+    "totalCost": 137.46985859999995,
     "totalTokens": 166801154
   }
 }
