@@ -41,6 +41,7 @@ export function exportSource(source, deviceDir, offline = false) {
       });
 
   const out = (res.stdout || "").trim();
+  const err = (res.stderr || "").trim();
   if (res.status === 0 && out.startsWith("{")) {
     try {
       const data = JSON.parse(out);
@@ -52,6 +53,9 @@ export function exportSource(source, deviceDir, offline = false) {
     }
   } else {
     console.log(`    (no data for ${source}, writing empty)`);
+    if (res.status !== 0) console.log(`    ! ccusage exit status: ${res.status}`);
+    if (err) console.log(`    ! stderr: ${err.split("\n")[0]}`);
+    else if (out) console.log(`    ! stdout: ${out.split("\n")[0]}`);
   }
 
   writeFileSync(join(deviceDir, `${source}.json`), JSON.stringify(EMPTY_USAGE, null, 2));

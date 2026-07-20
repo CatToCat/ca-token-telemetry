@@ -78,6 +78,25 @@ powershell -ExecutionPolicy Bypass -File init\uninstall-schedule-windows.ps1
 bash init/install-schedule-macos.sh
 ```
 
+This installs a `launchd` agent at:
+
+```text
+~/Library/LaunchAgents/com.user.catoken-telemetry.plist
+```
+
+Manually trigger one run:
+
+```bash
+launchctl start com.user.catoken-telemetry
+```
+
+Logs are written to:
+
+```text
+logs/collect-stdout.log
+logs/collect-stderr.log
+```
+
 Uninstall:
 
 ```bash

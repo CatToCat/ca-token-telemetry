@@ -9,18 +9,23 @@ set -euo pipefail
 REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 PLIST_PATH="$HOME/Library/LaunchAgents/com.user.catoken-telemetry.plist"
 LABEL="com.user.catoken-telemetry"
+LOG_DIR="$REPO_DIR/logs"
+USER_NAME="$(id -un)"
 
 NODE=$(command -v node)
 if [ -z "$NODE" ]; then
   echo "Error: node not found in PATH" >&2
   exit 1
 fi
+PATH_VALUE="/usr/bin:/bin:/usr/sbin:/sbin:$(dirname "$NODE")"
 
 COLLECT="$REPO_DIR/src/collect.mjs"
 if [ ! -f "$COLLECT" ]; then
   echo "Error: $COLLECT not found" >&2
   exit 1
 fi
+
+mkdir -p "$LOG_DIR"
 
 cat > "$PLIST_PATH" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
@@ -36,6 +41,17 @@ cat > "$PLIST_PATH" <<EOF
     </array>
     <key>WorkingDirectory</key>
     <string>${REPO_DIR}</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HOME</key>
+        <string>${HOME}</string>
+        <key>USER</key>
+        <string>${USER_NAME}</string>
+        <key>LOGNAME</key>
+        <string>${USER_NAME}</string>
+        <key>PATH</key>
+        <string>${PATH_VALUE}</string>
+    </dict>
     <key>StartCalendarInterval</key>
     <dict>
         <key>Hour</key>
@@ -44,9 +60,9 @@ cat > "$PLIST_PATH" <<EOF
         <integer>0</integer>
     </dict>
     <key>StandardOutPath</key>
-    <string>${REPO_DIR}/data/collect-stdout.log</string>
+    <string>${LOG_DIR}/collect-stdout.log</string>
     <key>StandardErrorPath</key>
-    <string>${REPO_DIR}/data/collect-stderr.log</string>
+    <string>${LOG_DIR}/collect-stderr.log</string>
     <key>RunAtLoad</key>
     <false/>
     <key>KeepAlive</key>
