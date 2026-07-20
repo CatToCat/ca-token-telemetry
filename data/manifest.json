@@ -1,13 +1,21 @@
 {
-  "generated": "2026-07-21 01:19",
+  "generated": "2026-07-21 01:38",
   "devices": [
+    {
+      "id": "m1pro-32gb",
+      "sources": [
+        "claude",
+        "opencode"
+      ],
+      "updated": "2026-07-21 01:38"
+    },
     {
       "id": "r5-2600-gtx1660",
       "sources": [
         "claude",
         "opencode"
       ],
-      "updated": "2026-07-21 01:19"
+      "updated": "2026-07-21 01:31"
     }
   ]
 }
