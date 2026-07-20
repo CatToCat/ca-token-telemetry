@@ -1,5 +1,5 @@
 param(
-    [string]$PushAt = "04:00"
+    [string]$PushAt = "03:00"
 )
 
 $ErrorActionPreference = 'Stop'
