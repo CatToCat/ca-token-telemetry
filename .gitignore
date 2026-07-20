@@ -1,6 +1,7 @@
 node_modules/
 .vercel
 .idea/
+logs/
 npm-debug.log*
 .DS_Store
 __pycache__/
