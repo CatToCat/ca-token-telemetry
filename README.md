@@ -2,7 +2,7 @@
 
 Multi-device dashboard for AI coding agent token usage & cost (OpenCode / Claude Code).
 Each machine exports its local [ccusage](https://github.com/ccusage/ccusage) data
-into `web/data/<device>/`; the static page merges everything into one view.
+into `data/<device>/`; the static page merges everything into one view.
 
 ## Requirements
 
@@ -50,23 +50,40 @@ npm run serve            # http://localhost:8000
 Or with Python:
 
 ```bash
-cd web && python -m http.server 8000    # macOS / Linux
-cd web && py -m http.server 8000         # Windows
+python -m http.server 8000    # macOS / Linux
+py -m http.server 8000         # Windows
 ```
 
-## Project layout
+## Scheduled collect (daily)
 
+Install a system scheduled task to run `npm run collect` every day at **04:00**,
+so data is pushed automatically without manual intervention.
+
+### Windows
+
+```powershell
+# Run as Administrator
+powershell -ExecutionPolicy Bypass -File init\install-schedule-windows.ps1
 ```
-.
-├── src/
-│   ├── collect.mjs     # entry point: export → manifest → git
-│   ├── config.mjs      # paths, sources, hostname → device mapping
-│   ├── ccusage.mjs     # run ccusage, write per-source JSON
-│   ├── manifest.mjs    # rebuild data/manifest.json
-│   ├── git.mjs         # commit / rebase / push
-│   └── util.mjs        # shared helpers (stamp)
-├── index.html          # static dashboard (fetches data at runtime)
-├── vercel.json
-├── assets/             # chart.js, icon
-└── data/               # manifest.json + <device>/{opencode,claude}.json
+
+Task name: `CATokenTelemetry-Collect`. Uninstall:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File init\uninstall-schedule-windows.ps1
 ```
+
+### macOS
+
+```bash
+bash init/install-schedule-macos.sh
+```
+
+Uninstall:
+
+```bash
+bash init/uninstall-schedule-macos.sh
+```
+
+## License
+
+MIT License — see [LICENSE](LICENSE).
