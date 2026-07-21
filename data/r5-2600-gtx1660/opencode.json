@@ -479,10 +479,18 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 13411584,
+      "cacheReadTokens": 24576829,
       "date": "2026-07-21",
-      "inputTokens": 21540,
+      "inputTokens": 1667325,
       "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 11165245,
+          "cost": 16.4879725,
+          "inputTokens": 1645785,
+          "modelName": "claude-opus-4-8",
+          "outputTokens": 107057
+        },
         {
           "cacheCreationTokens": 0,
           "cacheReadTokens": 13411584,
@@ -493,19 +501,42 @@
         }
       ],
       "modelsUsed": [
-        "deepseek-v4-flash-free"
+        "deepseek-v4-flash-free",
+        "claude-opus-4-8"
       ],
-      "outputTokens": 17958,
-      "totalCost": 0.048489235200000015,
-      "totalTokens": 13461414
+      "outputTokens": 125015,
+      "totalCost": 16.5364617352,
+      "totalTokens": 26379501
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 7061665,
+      "date": "2026-07-22",
+      "inputTokens": 187473,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 7061665,
+          "cost": 5.9304225,
+          "inputTokens": 187473,
+          "modelName": "claude-opus-4-8",
+          "outputTokens": 58489
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-4-8"
+      ],
+      "outputTokens": 58489,
+      "totalCost": 5.9304225,
+      "totalTokens": 7307627
     }
   ],
   "totals": {
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 925859592,
-    "inputTokens": 42999999,
-    "outputTokens": 4482193,
-    "totalCost": 686.3094201076002,
-    "totalTokens": 973508454
+    "cacheReadTokens": 944086502,
+    "inputTokens": 44833257,
+    "outputTokens": 4647739,
+    "totalCost": 708.7278151076001,
+    "totalTokens": 993734168
   }
 }
