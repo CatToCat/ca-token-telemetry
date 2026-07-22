@@ -192,19 +192,19 @@
         },
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 684032,
-          "cost": 0.008004589600000002,
-          "inputTokens": 30101,
-          "modelName": "deepseek-v4-flash-free",
-          "outputTokens": 5048
-        },
-        {
-          "cacheCreationTokens": 0,
           "cacheReadTokens": 627520,
           "cost": 0,
           "inputTokens": 8172,
           "modelName": "mimo-v2.5-free",
           "outputTokens": 3658
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 684032,
+          "cost": 0,
+          "inputTokens": 30101,
+          "modelName": "deepseek-v4-flash-free",
+          "outputTokens": 5048
         }
       ],
       "modelsUsed": [
@@ -213,7 +213,7 @@
         "deepseek-v4-flash-free"
       ],
       "outputTokens": 277282,
-      "totalCost": 29.764401089600007,
+      "totalCost": 29.756396500000008,
       "totalTokens": 32344437
     },
     {
@@ -352,7 +352,7 @@
         {
           "cacheCreationTokens": 0,
           "cacheReadTokens": 77604992,
-          "cost": 1.1145611176,
+          "cost": 0,
           "inputTokens": 5757313,
           "modelName": "deepseek-v4-flash-free",
           "outputTokens": 191592
@@ -363,7 +363,7 @@
         "deepseek-v4-flash-free"
       ],
       "outputTokens": 276575,
-      "totalCost": 19.244416617600002,
+      "totalCost": 18.12985550000001,
       "totalTokens": 104983934
     },
     {
@@ -391,7 +391,7 @@
         {
           "cacheCreationTokens": 0,
           "cacheReadTokens": 409984,
-          "cost": 0.0115198552,
+          "cost": 0,
           "inputTokens": 67837,
           "modelName": "deepseek-v4-flash-free",
           "outputTokens": 1038
@@ -403,7 +403,7 @@
         "gpt-5.1-chat-gus"
       ],
       "outputTokens": 255822,
-      "totalCost": 115.03734210520003,
+      "totalCost": 115.02582225000002,
       "totalTokens": 192492156
     },
     {
@@ -452,19 +452,19 @@
         },
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 6768000,
-          "cost": 0.06052256,
-          "inputTokens": 246080,
-          "modelName": "deepseek-v4-flash-free",
-          "outputTokens": 14209
-        },
-        {
-          "cacheCreationTokens": 0,
           "cacheReadTokens": 2160640,
           "cost": 0,
           "inputTokens": 166000,
           "modelName": "mimo-v2.5-free",
           "outputTokens": 12840
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 6768000,
+          "cost": 0,
+          "inputTokens": 246080,
+          "modelName": "deepseek-v4-flash-free",
+          "outputTokens": 14209
         }
       ],
       "modelsUsed": [
@@ -474,7 +474,7 @@
         "deepseek-v4-flash-free"
       ],
       "outputTokens": 232191,
-      "totalCost": 29.90436506,
+      "totalCost": 29.843842499999997,
       "totalTokens": 48662004
     },
     {
@@ -494,7 +494,7 @@
         {
           "cacheCreationTokens": 0,
           "cacheReadTokens": 13411584,
-          "cost": 0.048489235200000015,
+          "cost": 0,
           "inputTokens": 21540,
           "modelName": "deepseek-v4-flash-free",
           "outputTokens": 17958
@@ -505,38 +505,38 @@
         "claude-opus-4-8"
       ],
       "outputTokens": 125015,
-      "totalCost": 16.5364617352,
+      "totalCost": 16.4879725,
       "totalTokens": 26379501
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 7061665,
+      "cacheReadTokens": 19403422,
       "date": "2026-07-22",
-      "inputTokens": 187473,
+      "inputTokens": 501113,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 7061665,
-          "cost": 5.9304225,
-          "inputTokens": 187473,
+          "cacheReadTokens": 19403422,
+          "cost": 14.519901000000003,
+          "inputTokens": 501113,
           "modelName": "claude-opus-4-8",
-          "outputTokens": 58489
+          "outputTokens": 92505
         }
       ],
       "modelsUsed": [
         "claude-opus-4-8"
       ],
-      "outputTokens": 58489,
-      "totalCost": 5.9304225,
-      "totalTokens": 7307627
+      "outputTokens": 92505,
+      "totalCost": 14.519901000000003,
+      "totalTokens": 19997040
     }
   ],
   "totals": {
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 944086502,
-    "inputTokens": 44833257,
-    "outputTokens": 4647739,
-    "totalCost": 708.7278151076001,
-    "totalTokens": 993734168
+    "cacheReadTokens": 956428259,
+    "inputTokens": 45146897,
+    "outputTokens": 4681755,
+    "totalCost": 716.0741962500001,
+    "totalTokens": 1006423581
   }
 }
