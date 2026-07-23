@@ -54,26 +54,26 @@
       "totalTokens": 47486180
     },
     {
-      "cacheCreationTokens": 5678454,
-      "cacheReadTokens": 50806341,
+      "cacheCreationTokens": 5490816,
+      "cacheReadTokens": 48166094,
       "date": "2026-06-23",
-      "inputTokens": 56439924,
+      "inputTokens": 53657329,
       "modelBreakdowns": [
         {
-          "cacheCreationTokens": 5678454,
-          "cacheReadTokens": 50806341,
-          "cost": 346.26420300000024,
-          "inputTokens": 56439924,
+          "cacheCreationTokens": 5490816,
+          "cacheReadTokens": 48166094,
+          "cost": 329.3010670000002,
+          "inputTokens": 53657329,
           "modelName": "claude-opus-4-6",
-          "outputTokens": 126843
+          "outputTokens": 104551
         }
       ],
       "modelsUsed": [
         "claude-opus-4-6"
       ],
-      "outputTokens": 126843,
-      "totalCost": 346.26420300000024,
-      "totalTokens": 113051562
+      "outputTokens": 104551,
+      "totalCost": 329.3010670000002,
+      "totalTokens": 107418790
     },
     {
       "cacheCreationTokens": 3035209,
@@ -627,34 +627,34 @@
       "totalTokens": 1302630
     },
     {
-      "cacheCreationTokens": 46171,
+      "cacheCreationTokens": 87022,
       "cacheReadTokens": 403649,
       "date": "2026-07-23",
-      "inputTokens": 449837,
+      "inputTokens": 490691,
       "modelBreakdowns": [
         {
-          "cacheCreationTokens": 46171,
+          "cacheCreationTokens": 87022,
           "cacheReadTokens": 403649,
-          "cost": 1.70986695,
-          "inputTokens": 449837,
+          "cost": 1.9858902,
+          "inputTokens": 490691,
           "modelName": "claude-sonnet-4-6",
-          "outputTokens": 4408
+          "outputTokens": 4426
         }
       ],
       "modelsUsed": [
         "claude-sonnet-4-6"
       ],
-      "outputTokens": 4408,
-      "totalCost": 1.70986695,
-      "totalTokens": 904065
+      "outputTokens": 4426,
+      "totalCost": 1.9858902,
+      "totalTokens": 985788
     }
   ],
   "totals": {
-    "cacheCreationTokens": 30017202,
-    "cacheReadTokens": 325443683,
-    "inputTokens": 352741888,
-    "outputTokens": 1379909,
-    "totalCost": 2144.461410900001,
-    "totalTokens": 709582682
+    "cacheCreationTokens": 29870415,
+    "cacheReadTokens": 322803436,
+    "inputTokens": 350000147,
+    "outputTokens": 1357635,
+    "totalCost": 2127.774298150001,
+    "totalTokens": 704031633
   }
 }
