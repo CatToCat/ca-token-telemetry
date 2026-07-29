@@ -706,14 +706,36 @@
       "outputTokens": 35143,
       "totalCost": 3.6069955000000005,
       "totalTokens": 2194723
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 1445888,
+      "date": "2026-07-29",
+      "inputTokens": 578631,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 1445888,
+          "cost": 5.0470989999999984,
+          "inputTokens": 578631,
+          "modelName": "gpt-5.5-gus",
+          "outputTokens": 40816
+        }
+      ],
+      "modelsUsed": [
+        "gpt-5.5-gus"
+      ],
+      "outputTokens": 40816,
+      "totalCost": 5.0470989999999984,
+      "totalTokens": 2072219
     }
   ],
   "totals": {
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 1639502322,
-    "inputTokens": 83878183,
-    "outputTokens": 6256559,
-    "totalCost": 1292.5174931076006,
-    "totalTokens": 1729833275
+    "cacheReadTokens": 1640948210,
+    "inputTokens": 84456814,
+    "outputTokens": 6297375,
+    "totalCost": 1297.5645921076004,
+    "totalTokens": 1731905494
   }
 }
