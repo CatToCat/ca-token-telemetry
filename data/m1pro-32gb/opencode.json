@@ -386,7 +386,7 @@
         {
           "cacheCreationTokens": 0,
           "cacheReadTokens": 8832,
-          "cost": 0.0013202896,
+          "cost": 0,
           "inputTokens": 8744,
           "modelName": "deepseek-v4-flash-free",
           "outputTokens": 151
@@ -398,7 +398,7 @@
         "deepseek-v4-flash-free"
       ],
       "outputTokens": 59223,
-      "totalCost": 2.5395723896,
+      "totalCost": 2.5382521,
       "totalTokens": 2609973
     },
     {
@@ -478,7 +478,7 @@
         {
           "cacheCreationTokens": 0,
           "cacheReadTokens": 506496,
-          "cost": 0.011370508799999998,
+          "cost": 0,
           "inputTokens": 46788,
           "modelName": "deepseek-v4-flash-free",
           "outputTokens": 5891
@@ -500,7 +500,7 @@
         "mimo-v2.5-free"
       ],
       "outputTokens": 21153,
-      "totalCost": 1.5306107088,
+      "totalCost": 1.5192402,
       "totalTokens": 1615031
     },
     {
@@ -652,14 +652,63 @@
       "outputTokens": 82110,
       "totalCost": 25.1871205,
       "totalTokens": 42055349
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 11748130,
+      "date": "2026-07-31",
+      "inputTokens": 1368344,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 8196475,
+          "cost": 10.506672499999999,
+          "inputTokens": 1077637,
+          "modelName": "claude-opus-4-8",
+          "outputTokens": 40810
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 615655,
+          "cost": 0,
+          "inputTokens": 67045,
+          "modelName": "claude-opus-5",
+          "outputTokens": 10967
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 594624,
+          "cost": 0,
+          "inputTokens": 145320,
+          "modelName": "ling-3.0-flash-free",
+          "outputTokens": 1343
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 2341376,
+          "cost": 0,
+          "inputTokens": 78342,
+          "modelName": "deepseek-v4-flash-free",
+          "outputTokens": 3838
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-4-8",
+        "claude-opus-5",
+        "ling-3.0-flash-free",
+        "deepseek-v4-flash-free"
+      ],
+      "outputTokens": 56958,
+      "totalCost": 10.506672499999999,
+      "totalTokens": 13178558
     }
   ],
   "totals": {
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 359907505,
-    "inputTokens": 13954517,
-    "outputTokens": 2002110,
-    "totalCost": 297.6621690984,
-    "totalTokens": 375879445
+    "cacheReadTokens": 371655635,
+    "inputTokens": 15322861,
+    "outputTokens": 2059068,
+    "totalCost": 308.1561508,
+    "totalTokens": 389058003
   }
 }
