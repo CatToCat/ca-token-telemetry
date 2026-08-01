@@ -702,14 +702,46 @@
       "totalCost": 10.506672499999999,
       "totalTokens": 13178558,
       "costCapturedAt": "2026-08-01 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "date": "2026-08-02",
+      "inputTokens": 31775,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0,
+          "inputTokens": 22989,
+          "modelName": "claude-opus-5",
+          "outputTokens": 29
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0,
+          "inputTokens": 8786,
+          "modelName": "deepseek-v4-flash-free",
+          "outputTokens": 10
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-5",
+        "deepseek-v4-flash-free"
+      ],
+      "outputTokens": 39,
+      "totalCost": 0,
+      "totalTokens": 31814,
+      "costCapturedAt": "2026-08-02 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 15322861,
-    "outputTokens": 2059068,
+    "inputTokens": 15354636,
+    "outputTokens": 2059107,
     "cacheCreationTokens": 0,
     "cacheReadTokens": 371655635,
-    "totalTokens": 389058003,
+    "totalTokens": 389089817,
     "totalCost": 308.1688415984
   }
 }
