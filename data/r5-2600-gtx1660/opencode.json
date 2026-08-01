@@ -793,11 +793,11 @@
     }
   ],
   "totals": {
-    "cacheCreationTokens": 0,
-    "cacheReadTokens": 1705455519,
     "inputTokens": 95079175,
     "outputTokens": 6635597,
-    "totalCost": 1376.9912872500004,
-    "totalTokens": 1807414602
+    "cacheCreationTokens": 0,
+    "cacheReadTokens": 1705455519,
+    "totalTokens": 1807414602,
+    "totalCost": 1376.9912872500004
   }
 }

@@ -1,8 +1,10 @@
 // Runs the locally-installed ccusage CLI and writes per-source usage JSON.
 import { spawnSync } from "node:child_process";
-import { writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { REPO_ROOT, EMPTY_USAGE } from "./config.mjs";
+import { mergeUsage, normalizeUsage } from "./usage-ledger.mjs";
+import { stamp } from "./util.mjs";
 
 // Path to the ccusage executable installed as a dependency.
 // Using the local bin avoids relying on a global install or network.
@@ -22,6 +24,16 @@ const CCUSAGE_BIN = join(
  * @returns {boolean} true if real data was written
  */
 export function exportSource(source, deviceDir, offline = false) {
+  const outPath = join(deviceDir, `${source}.json`);
+  let existing = EMPTY_USAGE;
+  if (existsSync(outPath)) {
+    try {
+      existing = JSON.parse(readFileSync(outPath, "utf8"));
+    } catch {
+      console.log(`    ! existing ${source}.json is invalid; rebuilding from current snapshot`);
+    }
+  }
+
   const args = [source, "daily", "--json"];
   if (offline) args.push("--offline");
 
@@ -45,8 +57,12 @@ export function exportSource(source, deviceDir, offline = false) {
   if (res.status === 0 && out.startsWith("{")) {
     try {
       const data = JSON.parse(out);
-      writeFileSync(join(deviceDir, `${source}.json`), JSON.stringify(data, null, 2));
-      console.log(`    wrote ${source}.json (${data.daily?.length ?? 0} days)`);
+      const merged = mergeUsage(existing, data, stamp());
+      writeFileSync(outPath, JSON.stringify(merged, null, 2));
+      const addedDays = (merged.daily?.length ?? 0) - (normalizeUsage(existing).daily?.length ?? 0);
+      console.log(
+        `    wrote ${source}.json (${merged.daily?.length ?? 0} ledger days, ${data.daily?.length ?? 0} snapshot days, ${Math.max(0, addedDays)} new)`,
+      );
       return true;
     } catch {
       console.log(`    ! invalid JSON for ${source}; writing empty`);
@@ -58,6 +74,7 @@ export function exportSource(source, deviceDir, offline = false) {
     else if (out) console.log(`    ! stdout: ${out.split("\n")[0]}`);
   }
 
-  writeFileSync(join(deviceDir, `${source}.json`), JSON.stringify(EMPTY_USAGE, null, 2));
+  const normalized = normalizeUsage(existing);
+  writeFileSync(outPath, JSON.stringify(normalized, null, 2));
   return false;
 }

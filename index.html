@@ -188,6 +188,7 @@
       </div>
       <div class="ctrl"><label>From</label><input type="date" id="from"></div>
       <div class="ctrl"><label>To</label><input type="date" id="to"></div>
+      <div class="ctrl"><label>Month</label><select id="month"><option value="">All months</option></select></div>
       <div class="ctrl grow"><label>Model</label>
         <select id="q"><option value="">All models</option></select>
       </div>
@@ -238,7 +239,7 @@ const TOOL_COLORS = { "OpenCode": "#5898f4", "Claude Code": "#d97757" };
 const TOOL_TAG = { "OpenCode": "tag-oc", "Claude Code": "tag-cc" };
 
 let ALL = [];   // flattened rows: {date, device, tool, input, output, cacheCreate, cacheRead, total, cost, models[]}
-const state = { device: "all", tool: "all", metric: "cost", from: null, to: null, q: "", sortK: "date", sortDir: -1, page: 0 };
+const state = { device: "all", tool: "all", metric: "cost", from: null, to: null, month: "", q: "", sortK: "date", sortDir: -1, page: 0 };
 const PAGE_SIZE = 15;
 
 const fmtInt = n => Math.round(n).toLocaleString("en-US");
@@ -422,7 +423,27 @@ function renderTable(rows) {
   });
 }
 
-function refresh() { const rows = filtered(); renderGauges(rows); renderChart(rows); renderTable(rows); }
+function refresh() { state.page = 0; const rows = filtered(); renderGauges(rows); renderChart(rows); renderTable(rows); }
+
+function monthEnd(month) {
+  const [year, mon] = month.split("-").map(Number);
+  return new Date(Date.UTC(year, mon, 0)).toISOString().slice(0, 10);
+}
+
+function applyMonth(month) {
+  state.month = month;
+  if (month) {
+    state.from = `${month}-01`;
+    state.to = monthEnd(month);
+  } else {
+    state.from = null;
+    state.to = null;
+  }
+  document.getElementById("from").value = state.from || "";
+  document.getElementById("to").value = state.to || "";
+  document.getElementById("month").value = state.month;
+  refresh();
+}
 
 /* ---------- Build controls ---------- */
 function buildControls(manifest) {
@@ -457,13 +478,24 @@ function buildControls(manifest) {
     renderChart(filtered());
   });
 
-  document.getElementById("from").addEventListener("change", e => { state.from = e.target.value || null; refresh(); });
-  document.getElementById("to").addEventListener("change", e => { state.to = e.target.value || null; refresh(); });
+  document.getElementById("from").addEventListener("change", e => {
+    state.from = e.target.value || null;
+    state.month = "";
+    document.getElementById("month").value = "";
+    refresh();
+  });
+  document.getElementById("to").addEventListener("change", e => {
+    state.to = e.target.value || null;
+    state.month = "";
+    document.getElementById("month").value = "";
+    refresh();
+  });
+  document.getElementById("month").addEventListener("change", e => applyMonth(e.target.value));
   document.getElementById("q").addEventListener("change", e => { state.q = e.target.value; refresh(); });
 
   document.getElementById("reset").addEventListener("click", () => {
-    state.device="all"; state.tool="all"; state.metric="cost"; state.from=null; state.to=null; state.q="";
-    document.getElementById("from").value=""; document.getElementById("to").value=""; document.getElementById("q").value="";
+    state.device="all"; state.tool="all"; state.metric="cost"; state.from=null; state.to=null; state.month=""; state.q="";
+    document.getElementById("from").value=""; document.getElementById("to").value=""; document.getElementById("month").value=""; document.getElementById("q").value="";
     segDev.querySelectorAll("button").forEach(x=>x.classList.toggle("on", x.dataset.device==="all"));
     segTool.querySelectorAll("button").forEach(x=>x.classList.toggle("on", x.dataset.tool==="all"));
     document.querySelectorAll("#segMetric button").forEach(x=>x.classList.toggle("on", x.dataset.metric==="cost"));
@@ -483,6 +515,9 @@ function buildControls(manifest) {
     document.getElementById("from").min = document.getElementById("to").min = allDates[0];
     document.getElementById("from").max = document.getElementById("to").max = allDates[allDates.length-1];
   }
+  const months = [...new Set(ALL.map(r => r.date.slice(0, 7)))].sort().reverse();
+  document.getElementById("month").innerHTML = `<option value="">All months</option>` +
+    months.map(m => `<option value="${m}">${m}</option>`).join("");
   rebuildModelOptions();
 }
 
