@@ -825,52 +825,93 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 159543085,
+      "cacheReadTokens": 276869171,
       "date": "2026-08-02",
-      "inputTokens": 2970561,
+      "inputTokens": 10334917,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 31184896,
-          "cost": 21.669918,
-          "inputTokens": 598319,
-          "modelName": "gpt-5.5-gus",
-          "outputTokens": 27683
-        },
-        {
-          "cacheCreationTokens": 0,
-          "cacheReadTokens": 128358189,
-          "cost": 0,
-          "inputTokens": 2357704,
+          "cacheReadTokens": 199792563,
+          "cost": 145.66229649999997,
+          "inputTokens": 6217978,
           "modelName": "claude-opus-5",
-          "outputTokens": 232618
+          "outputTokens": 587045
         },
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 0,
+          "cacheReadTokens": 38545920,
+          "cost": 32.875765,
+          "inputTokens": 1570292,
+          "modelName": "gpt-5.5-gus",
+          "outputTokens": 100780
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 38529664,
           "cost": 0,
-          "inputTokens": 14538,
+          "inputTokens": 2530571,
           "modelName": "deepseek-v4-flash-free",
-          "outputTokens": 10
+          "outputTokens": 141801
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 1024,
+          "cost": 0,
+          "inputTokens": 16076,
+          "modelName": "mimo-v2.5-free",
+          "outputTokens": 29
         }
       ],
       "modelsUsed": [
         "claude-opus-5",
         "gpt-5.5-gus",
-        "deepseek-v4-flash-free"
+        "deepseek-v4-flash-free",
+        "mimo-v2.5-free"
       ],
-      "outputTokens": 260311,
-      "totalCost": 21.669918,
-      "totalTokens": 162780633,
-      "costCapturedAt": "2026-08-02 03:00"
+      "outputTokens": 829655,
+      "totalCost": 178.5380615,
+      "totalTokens": 288116302,
+      "costCapturedAt": "2026-08-03 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 104700792,
+      "date": "2026-08-03",
+      "inputTokens": 3132376,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 83556728,
+          "cost": 56.38521399999997,
+          "inputTokens": 2455600,
+          "modelName": "claude-opus-5",
+          "outputTokens": 93154
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 21144064,
+          "cost": 15.525991999999999,
+          "inputTokens": 676776,
+          "modelName": "gpt-5.5-gus",
+          "outputTokens": 42925
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-5",
+        "gpt-5.5-gus"
+      ],
+      "outputTokens": 136079,
+      "totalCost": 71.911206,
+      "totalTokens": 107978658,
+      "costCapturedAt": "2026-08-03 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 103656001,
-    "outputTokens": 7062909,
+    "inputTokens": 114152733,
+    "outputTokens": 7768332,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 1971039786,
-    "totalTokens": 2082019415,
-    "totalCost": 1435.7911002500005
+    "cacheReadTokens": 2193066664,
+    "totalTokens": 2315333742,
+    "totalCost": 1664.5704497500003
   }
 }
