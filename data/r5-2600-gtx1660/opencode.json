@@ -907,34 +907,66 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 6005821,
+      "cacheReadTokens": 77966523,
       "date": "2026-08-04",
-      "inputTokens": 1116816,
+      "inputTokens": 3719875,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 6005821,
-          "cost": 9.129890499999998,
-          "inputTokens": 1116816,
+          "cacheReadTokens": 77331131,
+          "cost": 64.79083550000003,
+          "inputTokens": 3533424,
           "modelName": "claude-opus-5",
-          "outputTokens": 21716
+          "outputTokens": 338326
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 635392,
+          "cost": 1.5615610000000002,
+          "inputTokens": 186451,
+          "modelName": "gpt-5.5-gus",
+          "outputTokens": 7310
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-5",
+        "gpt-5.5-gus"
+      ],
+      "outputTokens": 345636,
+      "totalCost": 66.35239650000003,
+      "totalTokens": 82035111,
+      "costCapturedAt": "2026-08-05 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 31985224,
+      "date": "2026-08-05",
+      "inputTokens": 645763,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 31985224,
+          "cost": 21.902327,
+          "inputTokens": 645763,
+          "modelName": "claude-opus-5",
+          "outputTokens": 107236
         }
       ],
       "modelsUsed": [
         "claude-opus-5"
       ],
-      "outputTokens": 21716,
-      "totalCost": 9.129890499999998,
-      "totalTokens": 7144353,
-      "costCapturedAt": "2026-08-04 03:00"
+      "outputTokens": 107236,
+      "totalCost": 21.902327,
+      "totalTokens": 32738223,
+      "costCapturedAt": "2026-08-05 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 121729773,
-    "outputTokens": 7924667,
+    "inputTokens": 124978595,
+    "outputTokens": 8355823,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 2294291059,
-    "totalTokens": 2424291825,
-    "totalCost": 1756.9945722500006
+    "cacheReadTokens": 2398236985,
+    "totalTokens": 2531920806,
+    "totalCost": 1836.1194052500005
   }
 }
