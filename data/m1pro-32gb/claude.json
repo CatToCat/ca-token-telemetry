@@ -872,14 +872,69 @@
       "totalCost": 0.5762069999999999,
       "totalTokens": 360725,
       "costCapturedAt": "2026-08-02 04:00"
+    },
+    {
+      "cacheCreationTokens": 296073,
+      "cacheReadTokens": 225747,
+      "date": "2026-08-04",
+      "inputTokens": 8253,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 257833,
+          "cacheReadTokens": 225747,
+          "cost": 2.09322975,
+          "inputTokens": 8250,
+          "modelName": "claude-opus-4-8",
+          "outputTokens": 13106
+        },
+        {
+          "cacheCreationTokens": 38240,
+          "cacheReadTokens": 0,
+          "cost": 0.159054,
+          "inputTokens": 3,
+          "modelName": "claude-sonnet-4-6",
+          "outputTokens": 1043
+        }
+      ],
+      "modelsUsed": [
+        "claude-sonnet-4-6",
+        "claude-opus-4-8"
+      ],
+      "outputTokens": 14149,
+      "totalCost": 2.25228375,
+      "totalTokens": 544222,
+      "costCapturedAt": "2026-08-05 04:00"
+    },
+    {
+      "cacheCreationTokens": 71849,
+      "cacheReadTokens": 0,
+      "date": "2026-08-05",
+      "inputTokens": 3374,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 71849,
+          "cacheReadTokens": 0,
+          "cost": 0.46647625000000004,
+          "inputTokens": 3374,
+          "modelName": "claude-opus-4-8",
+          "outputTokens": 22
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-4-8"
+      ],
+      "outputTokens": 22,
+      "totalCost": 0.46647625000000004,
+      "totalTokens": 75245,
+      "costCapturedAt": "2026-08-05 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 421804761,
-    "outputTokens": 1636614,
-    "cacheCreationTokens": 33570768,
-    "cacheReadTokens": 393073497,
-    "totalTokens": 850085640,
-    "totalCost": 2544.237167000001
+    "inputTokens": 421816388,
+    "outputTokens": 1650785,
+    "cacheCreationTokens": 33938690,
+    "cacheReadTokens": 393299244,
+    "totalTokens": 850705107,
+    "totalCost": 2546.9559270000013
   }
 }

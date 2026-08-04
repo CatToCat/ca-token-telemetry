@@ -757,14 +757,69 @@
       "totalCost": 0,
       "totalTokens": 6247306,
       "costCapturedAt": "2026-08-04 04:14"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 139752519,
+      "date": "2026-08-04",
+      "inputTokens": 6140281,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 139699854,
+          "cost": 113.9782219999999,
+          "inputTokens": 6121954,
+          "modelName": "claude-opus-5",
+          "outputTokens": 540741
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 52665,
+          "cost": 0.0727005,
+          "inputTokens": 18327,
+          "modelName": "claude-sonnet-4-6",
+          "outputTokens": 128
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-5",
+        "claude-sonnet-4-6"
+      ],
+      "outputTokens": 540869,
+      "totalCost": 114.0509224999999,
+      "totalTokens": 146433669,
+      "costCapturedAt": "2026-08-05 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 145018984,
+      "date": "2026-08-05",
+      "inputTokens": 10078266,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 145018984,
+          "cost": 133.50582199999997,
+          "inputTokens": 10078266,
+          "modelName": "claude-opus-5",
+          "outputTokens": 424200
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-5"
+      ],
+      "outputTokens": 424200,
+      "totalCost": 133.50582199999997,
+      "totalTokens": 155521450,
+      "costCapturedAt": "2026-08-05 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 15860156,
-    "outputTokens": 2135945,
+    "inputTokens": 32078703,
+    "outputTokens": 3101014,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 377320583,
-    "totalTokens": 395337123,
-    "totalCost": 308.1688415984
+    "cacheReadTokens": 662092086,
+    "totalTokens": 697292242,
+    "totalCost": 555.7255860983998
   }
 }
