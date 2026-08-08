@@ -1008,57 +1008,177 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 20919938,
+      "cacheReadTokens": 91096286,
       "date": "2026-08-08",
-      "inputTokens": 1603039,
+      "inputTokens": 8515836,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 20902914,
-          "cost": 23.565541999999986,
-          "inputTokens": 1565297,
+          "cacheReadTokens": 53116126,
+          "cost": 52.007763000000004,
+          "inputTokens": 3287875,
           "modelName": "claude-opus-5",
-          "outputTokens": 211504
+          "outputTokens": 360413
         },
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 0,
-          "cost": 0.03966,
-          "inputTokens": 7788,
-          "modelName": "gpt-5.5-gus",
-          "outputTokens": 15
-        },
-        {
-          "cacheCreationTokens": 0,
-          "cacheReadTokens": 9344,
-          "cost": 0.018606,
-          "inputTokens": 6388,
-          "modelName": "gpt-5.4-gus",
-          "outputTokens": 20
-        },
-        {
-          "cacheCreationTokens": 0,
-          "cacheReadTokens": 0,
-          "cost": 0.015768,
-          "inputTokens": 7794,
+          "cacheReadTokens": 37920768,
+          "cost": 11.1315555,
+          "inputTokens": 3877275,
           "modelName": "gpt-5.6-terra-dzus",
-          "outputTokens": 15
+          "outputTokens": 60953
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 11264,
+          "cost": 0.10925699999999999,
+          "inputTokens": 20005,
+          "modelName": "gpt-5.5-gus",
+          "outputTokens": 75
         },
         {
           "cacheCreationTokens": 0,
           "cacheReadTokens": 0,
-          "cost": 0.009980000000000001,
-          "inputTokens": 7872,
-          "modelName": "gpt-5.1-chat-gus",
-          "outputTokens": 14
+          "cost": 0.0760155,
+          "inputTokens": 13791,
+          "modelName": "claude-opus-4-7",
+          "outputTokens": 6
         },
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 7680,
-          "cost": 0.0017599999999999998,
-          "inputTokens": 7900,
+          "cacheReadTokens": 0,
+          "cost": 0.0738155,
+          "inputTokens": 13401,
+          "modelName": "claude-opus-4-8",
+          "outputTokens": 4
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.07130897999999997,
+          "inputTokens": 1103458,
+          "modelName": "ibm/granite-4-h-small",
+          "outputTokens": 20406
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.0629478,
+          "inputTokens": 19901,
+          "modelName": "claude-sonnet-4-6",
+          "outputTokens": 17
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 18816,
+          "cost": 0.0577565,
+          "inputTokens": 20657,
+          "modelName": "gpt-5.4-gus",
+          "outputTokens": 94
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.04982,
+          "inputTokens": 9944,
+          "modelName": "claude-opus-4-6",
+          "outputTokens": 4
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.044509999999999994,
+          "inputTokens": 20911,
+          "modelName": "gemini-3.1-pro-preview",
+          "outputTokens": 13
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.0328845,
+          "inputTokens": 9945,
+          "modelName": "claude-sonnet-4-5",
+          "outputTokens": 4
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.029667,
+          "inputTokens": 13465,
+          "modelName": "claude-sonnet-5",
+          "outputTokens": 4
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 18944,
+          "cost": 0.023213079999999997,
+          "inputTokens": 32505,
           "modelName": "gpt-5.6-luna-dzus",
-          "outputTokens": 22
+          "outputTokens": 91
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.01985875,
+          "inputTokens": 15735,
+          "modelName": "gpt-5.1-chat-gus",
+          "outputTokens": 19
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 10368,
+          "cost": 0.018761250000000004,
+          "inputTokens": 6501,
+          "modelName": "gpt-4o",
+          "outputTokens": 9
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.016542,
+          "inputTokens": 10446,
+          "modelName": "gemini-3.5-flash",
+          "outputTokens": 1
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.016014,
+          "inputTokens": 10446,
+          "modelName": "gemini-3.6-flash",
+          "outputTokens": 1
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.009949999999999999,
+          "inputTokens": 9945,
+          "modelName": "claude-haiku-4-5",
+          "outputTokens": 1
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.00099715,
+          "inputTokens": 3690,
+          "modelName": "meta-llama/llama-4-maverick-17b-128e-instruct-fp8",
+          "outputTokens": 1
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.0008576999999999999,
+          "inputTokens": 8574,
+          "modelName": "gemma-4-26b-a4b-it",
+          "outputTokens": 1
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0,
+          "inputTokens": 7366,
+          "modelName": "BIAN-llama3.1-8b:260213_pad_free_assistant_only",
+          "outputTokens": 0
         }
       ],
       "modelsUsed": [
@@ -1067,20 +1187,58 @@
         "gpt-5.4-gus",
         "gpt-5.5-gus",
         "gpt-5.6-terra-dzus",
-        "gpt-5.1-chat-gus"
+        "gpt-5.1-chat-gus",
+        "claude-sonnet-4-6",
+        "gemini-3.1-pro-preview",
+        "gpt-4o",
+        "claude-sonnet-4-5",
+        "claude-haiku-4-5",
+        "claude-opus-4-6",
+        "claude-opus-4-7",
+        "claude-opus-4-8",
+        "claude-sonnet-5",
+        "gemini-3.5-flash",
+        "gemini-3.6-flash",
+        "gemma-4-26b-a4b-it",
+        "ibm/granite-4-h-small",
+        "meta-llama/llama-4-maverick-17b-128e-instruct-fp8",
+        "BIAN-llama3.1-8b:260213_pad_free_assistant_only"
       ],
-      "outputTokens": 211590,
-      "totalCost": 23.651315999999987,
-      "totalTokens": 22734576,
-      "costCapturedAt": "2026-08-08 03:00"
+      "outputTokens": 442117,
+      "totalCost": 63.85349520999943,
+      "totalTokens": 100089937,
+      "costCapturedAt": "2026-08-09 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 60756480,
+      "date": "2026-08-09",
+      "inputTokens": 5862656,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 60756480,
+          "cost": 15.867799999999999,
+          "inputTokens": 5862656,
+          "modelName": "gpt-5.6-terra-dzus",
+          "outputTokens": 61272
+        }
+      ],
+      "modelsUsed": [
+        "gpt-5.6-terra-dzus"
+      ],
+      "outputTokens": 61272,
+      "totalCost": 15.867799999999999,
+      "totalTokens": 66699880,
+      "costCapturedAt": "2026-08-09 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 154273986,
-    "outputTokens": 9699627,
+    "inputTokens": 167049439,
+    "outputTokens": 9991426,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 3072645703,
-    "totalTokens": 3236968728,
-    "totalCost": 2353.2822212500005
+    "cacheReadTokens": 3203578531,
+    "totalTokens": 3381023969,
+    "totalCost": 2409.35220046
   }
 }
