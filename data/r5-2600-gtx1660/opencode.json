@@ -1211,34 +1211,57 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 60756480,
+      "cacheReadTokens": 82847232,
       "date": "2026-08-09",
-      "inputTokens": 5862656,
+      "inputTokens": 10903319,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 60756480,
-          "cost": 15.867799999999999,
-          "inputTokens": 5862656,
+          "cacheReadTokens": 82847232,
+          "cost": 29.275707499999978,
+          "inputTokens": 10903319,
           "modelName": "gpt-5.6-terra-dzus",
-          "outputTokens": 61272
+          "outputTokens": 102939
         }
       ],
       "modelsUsed": [
         "gpt-5.6-terra-dzus"
       ],
-      "outputTokens": 61272,
-      "totalCost": 15.867799999999999,
-      "totalTokens": 66699880,
-      "costCapturedAt": "2026-08-09 03:00"
+      "outputTokens": 102939,
+      "totalCost": 29.275707499999978,
+      "totalTokens": 93885045,
+      "costCapturedAt": "2026-08-10 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 30394773,
+      "date": "2026-08-10",
+      "inputTokens": 6885757,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 30394773,
+          "cost": 18.464177499999998,
+          "inputTokens": 6885757,
+          "modelName": "gpt-5.6-terra-dzus",
+          "outputTokens": 60242
+        }
+      ],
+      "modelsUsed": [
+        "gpt-5.6-terra-dzus"
+      ],
+      "outputTokens": 60242,
+      "totalCost": 18.464177499999998,
+      "totalTokens": 37363849,
+      "costCapturedAt": "2026-08-10 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 167049439,
-    "outputTokens": 9991426,
+    "inputTokens": 178975859,
+    "outputTokens": 10093335,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 3203578531,
-    "totalTokens": 3381023969,
-    "totalCost": 2409.35220046
+    "cacheReadTokens": 3256064056,
+    "totalTokens": 3445572983,
+    "totalCost": 2441.22428546
   }
 }
