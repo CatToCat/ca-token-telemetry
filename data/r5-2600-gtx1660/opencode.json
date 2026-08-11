@@ -1257,34 +1257,34 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 7939072,
+      "cacheReadTokens": 14947840,
       "date": "2026-08-11",
-      "inputTokens": 3522086,
+      "inputTokens": 5464088,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 7939072,
-          "cost": 9.07688,
-          "inputTokens": 3522086,
+          "cacheReadTokens": 14947840,
+          "cost": 14.123285000000005,
+          "inputTokens": 5464088,
           "modelName": "gpt-5.6-terra-dzus",
-          "outputTokens": 13077
+          "outputTokens": 22690
         }
       ],
       "modelsUsed": [
         "gpt-5.6-terra-dzus"
       ],
-      "outputTokens": 13077,
-      "totalCost": 9.07688,
-      "totalTokens": 11479269,
-      "costCapturedAt": "2026-08-11 03:00"
+      "outputTokens": 22690,
+      "totalCost": 14.123285000000005,
+      "totalTokens": 20442799,
+      "costCapturedAt": "2026-08-12 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 194230091,
-    "outputTokens": 10145775,
+    "inputTokens": 196172093,
+    "outputTokens": 10155388,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 3286725688,
-    "totalTokens": 3491562113,
-    "totalCost": 2480.45885546
+    "cacheReadTokens": 3293734456,
+    "totalTokens": 3500525643,
+    "totalCost": 2485.50526046
   }
 }
