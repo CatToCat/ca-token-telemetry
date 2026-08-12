@@ -972,14 +972,69 @@
       "totalCost": 29.96922000000001,
       "totalTokens": 19410906,
       "costCapturedAt": "2026-08-12 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 150303344,
+      "date": "2026-08-12",
+      "inputTokens": 7208001,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 150303344,
+          "cost": 126.14421199999995,
+          "inputTokens": 7024813,
+          "modelName": "claude-opus-5",
+          "outputTokens": 634739
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 1.05763,
+          "inputTokens": 183188,
+          "modelName": "gpt-5.5-gus",
+          "outputTokens": 4723
+        }
+      ],
+      "modelsUsed": [
+        "gpt-5.5-gus",
+        "claude-opus-5"
+      ],
+      "outputTokens": 639462,
+      "totalCost": 127.20184199999996,
+      "totalTokens": 158150807,
+      "costCapturedAt": "2026-08-13 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 96674982,
+      "date": "2026-08-13",
+      "inputTokens": 3873145,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 96674982,
+          "cost": 73.58304100000008,
+          "inputTokens": 3873145,
+          "modelName": "claude-opus-5",
+          "outputTokens": 235193
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-5"
+      ],
+      "outputTokens": 235193,
+      "totalCost": 73.58304100000008,
+      "totalTokens": 100783320,
+      "costCapturedAt": "2026-08-13 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 98054401,
-    "outputTokens": 7528222,
+    "inputTokens": 109135547,
+    "outputTokens": 8402877,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 1507267367,
-    "totalTokens": 1612965188,
-    "totalCost": 1026.7587135984
+    "cacheReadTokens": 1754245693,
+    "totalTokens": 1871899315,
+    "totalCost": 1227.5435965984
   }
 }
