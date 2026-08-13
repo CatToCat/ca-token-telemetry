@@ -1330,43 +1330,84 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 16633336,
+      "cacheReadTokens": 28106819,
       "date": "2026-08-13",
-      "inputTokens": 1125452,
+      "inputTokens": 1751769,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 16633336,
-          "cost": 1.198394,
-          "inputTokens": 1105262,
+          "cacheReadTokens": 17403705,
+          "cost": 1.4926360000000003,
+          "inputTokens": 1342192,
           "modelName": "gpt-5.6-luna-dzus",
-          "outputTokens": 9424
+          "outputTokens": 15840
         },
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 0,
-          "cost": 0.101275,
-          "inputTokens": 20190,
+          "cacheReadTokens": 295690,
+          "cost": 1.19537,
+          "inputTokens": 134550,
           "modelName": "claude-opus-5",
-          "outputTokens": 13
+          "outputTokens": 14991
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 10407424,
+          "cost": 0.09024896719999999,
+          "inputTokens": 275027,
+          "modelName": "deepseek-v4-flash-free",
+          "outputTokens": 75372
         }
       ],
       "modelsUsed": [
         "gpt-5.6-luna-dzus",
-        "claude-opus-5"
+        "claude-opus-5",
+        "deepseek-v4-flash-free"
       ],
-      "outputTokens": 9437,
-      "totalCost": 1.2996689999999997,
-      "totalTokens": 17774323,
-      "costCapturedAt": "2026-08-13 03:00"
+      "outputTokens": 106203,
+      "totalCost": 2.7782549671999988,
+      "totalTokens": 29979383,
+      "costCapturedAt": "2026-08-14 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 36264474,
+      "date": "2026-08-14",
+      "inputTokens": 1138378,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 19349276,
+          "cost": 19.602923,
+          "inputTokens": 435627,
+          "modelName": "claude-opus-5",
+          "outputTokens": 310006
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 16915198,
+          "cost": 1.9657075000000002,
+          "inputTokens": 702751,
+          "modelName": "gpt-5.6-terra-dzus",
+          "outputTokens": 12306
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-5",
+        "gpt-5.6-terra-dzus"
+      ],
+      "outputTokens": 322312,
+      "totalCost": 21.568630499999998,
+      "totalTokens": 37726780,
+      "costCapturedAt": "2026-08-14 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 206316344,
-    "outputTokens": 10605478,
+    "inputTokens": 208081039,
+    "outputTokens": 11024556,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 3493146126,
-    "totalTokens": 3710543714,
-    "totalCost": 2616.3910219599998
+    "cacheReadTokens": 3540884083,
+    "totalTokens": 3760475554,
+    "totalCost": 2639.4382384272
   }
 }
