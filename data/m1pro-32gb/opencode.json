@@ -1007,34 +1007,66 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 96674982,
+      "cacheReadTokens": 509642968,
       "date": "2026-08-13",
-      "inputTokens": 3873145,
+      "inputTokens": 25459002,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 96674982,
-          "cost": 73.58304100000008,
-          "inputTokens": 3873145,
+          "cacheReadTokens": 60141056,
+          "cost": 117.19170800000006,
+          "inputTokens": 15887900,
+          "modelName": "gpt-5.5-gus",
+          "outputTokens": 201943
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 449501912,
+          "cost": 0,
+          "inputTokens": 9571102,
           "modelName": "claude-opus-5",
-          "outputTokens": 235193
+          "outputTokens": 815610
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-5",
+        "gpt-5.5-gus"
+      ],
+      "outputTokens": 1017553,
+      "totalCost": 117.19170800000006,
+      "totalTokens": 536173636,
+      "costCapturedAt": "2026-08-14 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 127923231,
+      "date": "2026-08-14",
+      "inputTokens": 615735,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 127923231,
+          "cost": 0,
+          "inputTokens": 615735,
+          "modelName": "claude-opus-5",
+          "outputTokens": 270413
         }
       ],
       "modelsUsed": [
         "claude-opus-5"
       ],
-      "outputTokens": 235193,
-      "totalCost": 73.58304100000008,
-      "totalTokens": 100783320,
-      "costCapturedAt": "2026-08-13 04:00"
+      "outputTokens": 270413,
+      "totalCost": 0,
+      "totalTokens": 128809379,
+      "costCapturedAt": "2026-08-14 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 109135547,
-    "outputTokens": 8402877,
+    "inputTokens": 131337139,
+    "outputTokens": 9455650,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 1754245693,
-    "totalTokens": 1871899315,
-    "totalCost": 1227.5435965984
+    "cacheReadTokens": 2295136910,
+    "totalTokens": 2436099010,
+    "totalCost": 1271.1522635984
   }
 }
