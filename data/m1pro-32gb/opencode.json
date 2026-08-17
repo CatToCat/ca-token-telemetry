@@ -1123,14 +1123,46 @@
       "totalCost": 0.13823500000000002,
       "totalTokens": 280214,
       "costCapturedAt": "2026-08-16 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 43990950,
+      "date": "2026-08-17",
+      "inputTokens": 1586347,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 39630768,
+          "cost": 33.32931399999998,
+          "inputTokens": 1290611,
+          "modelName": "claude-opus-5",
+          "outputTokens": 282435
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 4360182,
+          "cost": 1.1629100000000008,
+          "inputTokens": 295736,
+          "modelName": "gpt-5.6-terra-dzus",
+          "outputTokens": 21952
+        }
+      ],
+      "modelsUsed": [
+        "gpt-5.6-terra-dzus",
+        "claude-opus-5"
+      ],
+      "outputTokens": 304387,
+      "totalCost": 34.492223999999986,
+      "totalTokens": 45887970,
+      "costCapturedAt": "2026-08-18 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 140109553,
-    "outputTokens": 10537579,
+    "inputTokens": 141695900,
+    "outputTokens": 10841966,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 2626411184,
-    "totalTokens": 2777229591,
-    "totalCost": 1581.2827835983994
+    "cacheReadTokens": 2670402134,
+    "totalTokens": 2823117561,
+    "totalCost": 1615.7750075983995
   }
 }
