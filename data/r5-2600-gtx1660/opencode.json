@@ -1496,14 +1496,37 @@
       "totalCost": 44.815509500000005,
       "totalTokens": 86276305,
       "costCapturedAt": "2026-08-18 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 6922394,
+      "date": "2026-08-18",
+      "inputTokens": 1014175,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 6922394,
+          "cost": 2.8896625000000005,
+          "inputTokens": 1014175,
+          "modelName": "gpt-5.6-terra-dzus",
+          "outputTokens": 13403
+        }
+      ],
+      "modelsUsed": [
+        "gpt-5.6-terra-dzus"
+      ],
+      "outputTokens": 13403,
+      "totalCost": 2.8896625000000005,
+      "totalTokens": 7960184,
+      "costCapturedAt": "2026-08-19 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 232931385,
-    "outputTokens": 12599538,
+    "inputTokens": 233945560,
+    "outputTokens": 12612941,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 3970033012,
-    "totalTokens": 4216058140,
-    "totalCost": 3002.5101764272003
+    "cacheReadTokens": 3976955406,
+    "totalTokens": 4224018324,
+    "totalCost": 3005.3998389272006
   }
 }
