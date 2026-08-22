@@ -1609,17 +1609,17 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 23224781,
+      "cacheReadTokens": 47934503,
       "date": "2026-08-22",
-      "inputTokens": 3478095,
+      "inputTokens": 4453170,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 22625474,
-          "cost": 29.611872,
-          "inputTokens": 3156987,
+          "cacheReadTokens": 47335196,
+          "cost": 50.69935799999998,
+          "inputTokens": 4132062,
           "modelName": "claude-opus-5",
-          "outputTokens": 100568
+          "outputTokens": 254858
         },
         {
           "cacheCreationTokens": 0,
@@ -1634,18 +1634,41 @@
         "gpt-5.6-terra-dzus",
         "claude-opus-5"
       ],
-      "outputTokens": 102237,
-      "totalCost": 30.445812,
-      "totalTokens": 26805522,
-      "costCapturedAt": "2026-08-22 03:00"
+      "outputTokens": 256527,
+      "totalCost": 51.53329799999998,
+      "totalTokens": 52644609,
+      "costCapturedAt": "2026-08-23 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 28263821,
+      "date": "2026-08-23",
+      "inputTokens": 989615,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 28263821,
+          "cost": 22.226185499999993,
+          "inputTokens": 989615,
+          "modelName": "claude-opus-5",
+          "outputTokens": 125848
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-5"
+      ],
+      "outputTokens": 125848,
+      "totalCost": 22.226185499999993,
+      "totalTokens": 29379284,
+      "costCapturedAt": "2026-08-23 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 250836857,
-    "outputTokens": 13136714,
+    "inputTokens": 252801547,
+    "outputTokens": 13416852,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 4174660807,
-    "totalTokens": 4439247076,
-    "totalCost": 3116.4163995160006
+    "cacheReadTokens": 4227634350,
+    "totalTokens": 4494465447,
+    "totalCost": 3159.7300710160007
   }
 }
