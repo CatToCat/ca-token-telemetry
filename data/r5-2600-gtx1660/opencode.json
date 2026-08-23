@@ -1641,34 +1641,57 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 28263821,
+      "cacheReadTokens": 64840527,
       "date": "2026-08-23",
-      "inputTokens": 989615,
+      "inputTokens": 3320969,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 28263821,
-          "cost": 22.226185499999993,
-          "inputTokens": 989615,
+          "cacheReadTokens": 64840527,
+          "cost": 59.47615849999998,
+          "inputTokens": 3320969,
           "modelName": "claude-opus-5",
-          "outputTokens": 125848
+          "outputTokens": 418042
         }
       ],
       "modelsUsed": [
         "claude-opus-5"
       ],
-      "outputTokens": 125848,
-      "totalCost": 22.226185499999993,
-      "totalTokens": 29379284,
-      "costCapturedAt": "2026-08-23 03:00"
+      "outputTokens": 418042,
+      "totalCost": 59.47615849999998,
+      "totalTokens": 68579538,
+      "costCapturedAt": "2026-08-24 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 24046463,
+      "date": "2026-08-24",
+      "inputTokens": 590528,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 24046463,
+          "cost": 16.636521500000004,
+          "inputTokens": 590528,
+          "modelName": "claude-opus-5",
+          "outputTokens": 66426
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-5"
+      ],
+      "outputTokens": 66426,
+      "totalCost": 16.636521500000004,
+      "totalTokens": 24703417,
+      "costCapturedAt": "2026-08-24 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 252801547,
-    "outputTokens": 13416852,
+    "inputTokens": 255723429,
+    "outputTokens": 13775472,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 4227634350,
-    "totalTokens": 4494465447,
-    "totalCost": 3159.7300710160007
+    "cacheReadTokens": 4288257519,
+    "totalTokens": 4558369118,
+    "totalCost": 3213.6165655160007
   }
 }
