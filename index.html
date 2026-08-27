@@ -101,10 +101,15 @@
   .reset:hover { color: var(--txt); border-color: var(--dim); }
 
   .chart-card { background: var(--panel); border:1px solid var(--line); border-radius: 16px; padding: 22px 22px 14px; margin-bottom: 22px; box-shadow: 0 4px 20px rgba(26,34,48,.05); }
-  .chart-head { display:flex; justify-content: space-between; align-items:baseline; margin-bottom: 14px; }
+  .chart-head { display:flex; justify-content: space-between; align-items:center; gap:16px; margin-bottom: 14px; }
   .chart-head h2 { font-family:"Space Grotesk",sans-serif; font-size: 16px; margin:0; font-weight:500; }
-  .chart-head .hint { color: var(--dim); font-size:12px; font-family:"JetBrains Mono",monospace; }
-  .chart-box { position: relative; height: 360px; }
+  .chart-nav { display:flex; align-items:center; gap:8px; }
+  .chart-range { min-width:170px; text-align:center; color:var(--muted); font-size:11px; font-family:"JetBrains Mono",monospace; }
+  .chart-nav button { width:30px; height:30px; padding:0; border:1px solid var(--line-2); border-radius:8px; background:var(--panel); color:var(--muted); cursor:pointer; font-size:18px; line-height:1; transition:all .15s; }
+  .chart-nav button:hover:not(:disabled) { border-color:var(--primary); color:var(--primary); background:rgba(47,107,255,.04); }
+  .chart-nav button:disabled { opacity:.35; cursor:default; }
+  .chart-box { position: relative; height: 360px; cursor:grab; touch-action:pan-y; user-select:none; }
+  .chart-box.dragging { cursor:grabbing; }
 
   .table-card { background: var(--panel); border:1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(26,34,48,.05); }
   .table-head { display:flex; justify-content:space-between; align-items:center; padding: 16px 20px; border-bottom:1px solid var(--line); }
@@ -154,6 +159,9 @@
     .gauges{grid-template-columns:repeat(2,1fr);}
     .wrap{padding:0 16px 48px;}
     header{padding:24px 0 4px;}
+    .chart-head{align-items:flex-start; flex-direction:column; gap:10px;}
+    .chart-nav{width:100%; justify-content:space-between;}
+    .chart-range{flex:1; min-width:0;}
     .chart-box{height:260px;}
   }
 </style>
@@ -198,9 +206,13 @@
     <div class="chart-card">
       <div class="chart-head">
         <h2 id="chartTitle">Daily cost burn rate</h2>
-        <span class="hint" id="chartHint">stacked by source</span>
+        <div class="chart-nav" aria-label="Chart date range">
+          <button id="chartPrev" type="button" aria-label="Previous month">&#8249;</button>
+          <span class="chart-range" id="chartRange"></span>
+          <button id="chartNext" type="button" aria-label="Next month">&#8250;</button>
+        </div>
       </div>
-      <div class="chart-box"><canvas id="chart"></canvas></div>
+      <div class="chart-box" id="chartBox" title="Drag left or right to move one month"><canvas id="chart"></canvas></div>
     </div>
 
     <div class="table-card">
@@ -239,8 +251,9 @@ const TOOL_COLORS = { "OpenCode": "#5898f4", "Claude Code": "#d97757" };
 const TOOL_TAG = { "OpenCode": "tag-oc", "Claude Code": "tag-cc" };
 
 let ALL = [];   // flattened rows: {date, device, tool, input, output, cacheCreate, cacheRead, total, cost, models[]}
-const state = { device: "all", tool: "all", metric: "cost", from: null, to: null, month: "", q: "", sortK: "date", sortDir: -1, page: 0 };
+const state = { device: "all", tool: "all", metric: "cost", from: null, to: null, month: "", q: "", sortK: "date", sortDir: -1, page: 0, chartEnd: null };
 const PAGE_SIZE = 15;
+const CHART_DAYS = 30;
 
 const fmtInt = n => Math.round(n).toLocaleString("en-US");
 const fmtMoney = n => "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -311,17 +324,49 @@ function animateCounts() {
 
 /* ---------- Chart ---------- */
 let chart;
+function shiftDate(date, days) {
+  const d = new Date(date + "T00:00:00Z");
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+function chartBounds(rows) {
+  const dates = rows.map(r => r.date).sort();
+  if (!dates.length) return null;
+  const latest = dates[dates.length - 1];
+  const earliest = dates[0];
+  const firstWindowEnd = shiftDate(earliest, CHART_DAYS - 1);
+  const minimumEnd = firstWindowEnd < latest ? firstWindowEnd : latest;
+  let end = state.chartEnd || latest;
+  if (end > latest) end = latest;
+  if (end < minimumEnd) end = minimumEnd;
+  state.chartEnd = end;
+  return { earliest, latest, minimumEnd, start: shiftDate(end, -(CHART_DAYS - 1)), end };
+}
+
+function moveChart(days, rows = filtered()) {
+  const bounds = chartBounds(rows);
+  if (!bounds) return;
+  const nextEnd = shiftDate(bounds.end, days);
+  state.chartEnd = nextEnd > bounds.latest ? bounds.latest : nextEnd < bounds.minimumEnd ? bounds.minimumEnd : nextEnd;
+  renderChart(rows);
+}
+
 function renderChart(rows) {
   const metric = state.metric;
   document.getElementById("chartTitle").textContent = metric === "cost" ? "Daily cost burn rate" : "Daily token volume";
+  const bounds = chartBounds(rows);
+  const visibleRows = bounds ? rows.filter(r => r.date >= bounds.start && r.date <= bounds.end) : [];
   // group lines by tool (across selected devices)
-  const dates = [...new Set(rows.map(r => r.date))].sort();
+  const dates = [...new Set(visibleRows.map(r => r.date))].sort();
   const toolsShown = state.tool === "all" ? [...new Set(ALL.map(r => r.tool))].sort() : [state.tool];
-  document.getElementById("chartHint").textContent = "stacked by source";
+  document.getElementById("chartRange").textContent = bounds ? `${bounds.start}  /  ${bounds.end}` : "No data";
+  document.getElementById("chartPrev").disabled = !bounds || bounds.start <= bounds.earliest;
+  document.getElementById("chartNext").disabled = !bounds || bounds.end >= bounds.latest;
   const datasets = toolsShown.map(tool => {
     const c = TOOL_COLORS[tool] || "#0aa89a";
     const map = {};
-    rows.filter(r => r.tool === tool).forEach(r => map[r.date] = (map[r.date]||0) + r[metric]);
+    visibleRows.filter(r => r.tool === tool).forEach(r => map[r.date] = (map[r.date]||0) + r[metric]);
     return {
       label: tool, data: dates.map(d => map[d] || 0),
       borderColor: c, backgroundColor: c + "22", fill: true, tension: .32,
@@ -478,6 +523,27 @@ function buildControls(manifest) {
     renderChart(filtered());
   });
 
+  document.getElementById("chartPrev").addEventListener("click", () => moveChart(-CHART_DAYS));
+  document.getElementById("chartNext").addEventListener("click", () => moveChart(CHART_DAYS));
+  const chartBox = document.getElementById("chartBox");
+  let dragStart = null;
+  chartBox.addEventListener("pointerdown", e => {
+    dragStart = e.clientX;
+    chartBox.classList.add("dragging");
+    chartBox.setPointerCapture(e.pointerId);
+  });
+  chartBox.addEventListener("pointerup", e => {
+    if (dragStart !== null && Math.abs(e.clientX - dragStart) >= 50) {
+      moveChart(e.clientX < dragStart ? CHART_DAYS : -CHART_DAYS);
+    }
+    dragStart = null;
+    chartBox.classList.remove("dragging");
+  });
+  chartBox.addEventListener("pointercancel", () => {
+    dragStart = null;
+    chartBox.classList.remove("dragging");
+  });
+
   document.getElementById("from").addEventListener("change", e => {
     state.from = e.target.value || null;
     state.month = "";
@@ -494,7 +560,7 @@ function buildControls(manifest) {
   document.getElementById("q").addEventListener("change", e => { state.q = e.target.value; refresh(); });
 
   document.getElementById("reset").addEventListener("click", () => {
-    state.device="all"; state.tool="all"; state.metric="cost"; state.from=null; state.to=null; state.month=""; state.q="";
+    state.device="all"; state.tool="all"; state.metric="cost"; state.from=null; state.to=null; state.month=""; state.q=""; state.chartEnd=null;
     document.getElementById("from").value=""; document.getElementById("to").value=""; document.getElementById("month").value=""; document.getElementById("q").value="";
     segDev.querySelectorAll("button").forEach(x=>x.classList.toggle("on", x.dataset.device==="all"));
     segTool.querySelectorAll("button").forEach(x=>x.classList.toggle("on", x.dataset.tool==="all"));
@@ -538,8 +604,9 @@ function rebuildModelOptions() {
     ALL = rows;
     if (!ALL.length) throw new Error("No usage rows found in any device folder.");
     const devCount = new Set(ALL.map(r=>r.device)).size;
+    const dayCount = (ALL.length / devCount).toLocaleString("en-US", { maximumFractionDigits: 1 });
     document.getElementById("meta").innerHTML =
-      `<span class="live"><span class="pulse"></span>Live</span><span class="dott"></span><span>Multi-Device Telemetry</span><span class="dott"></span><span>${devCount} device${devCount!==1?'s':''}</span><span class="dott"></span><span>${ALL.length} day-records</span><span class="dott"></span><span>updated ${manifest.generated}</span>`;
+      `<span class="live"><span class="pulse"></span>Live</span><span class="dott"></span><span>Multi-Device Telemetry</span><span class="dott"></span><span>${devCount} device${devCount!==1?'s':''}</span><span class="dott"></span><span>${dayCount} day-records</span><span class="dott"></span><span>updated ${manifest.generated}</span>`;
     buildControls(manifest);
     document.getElementById("status").style.display = "none";
     document.getElementById("app").style.display = "block";
