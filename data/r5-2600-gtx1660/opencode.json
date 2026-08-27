@@ -1766,14 +1766,69 @@
       "totalCost": 10.376507000000004,
       "totalTokens": 26861648,
       "costCapturedAt": "2026-08-27 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 45745658,
+      "date": "2026-08-27",
+      "inputTokens": 2101409,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 43170550,
+          "cost": 10.982781,
+          "inputTokens": 1490241,
+          "modelName": "gpt-5.6-sol",
+          "outputTokens": 70267
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 2575108,
+          "cost": 0.6373759999999999,
+          "inputTokens": 611168,
+          "modelName": "gpt-5.6-luna-dzus",
+          "outputTokens": 3430
+        }
+      ],
+      "modelsUsed": [
+        "gpt-5.6-sol",
+        "gpt-5.6-luna-dzus"
+      ],
+      "outputTokens": 73697,
+      "totalCost": 11.620156999999995,
+      "totalTokens": 47942161,
+      "costCapturedAt": "2026-08-28 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 4058917,
+      "date": "2026-08-28",
+      "inputTokens": 275292,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 4058917,
+          "cost": 1.9456244999999996,
+          "inputTokens": 275292,
+          "modelName": "gpt-5.6-sol",
+          "outputTokens": 11163
+        }
+      ],
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "outputTokens": 11163,
+      "totalCost": 1.9456244999999996,
+      "totalTokens": 4347270,
+      "costCapturedAt": "2026-08-28 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 266175832,
-    "outputTokens": 13999275,
+    "inputTokens": 268552533,
+    "outputTokens": 14084135,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 4377126721,
-    "totalTokens": 4657943200,
-    "totalCost": 3273.397513516001
+    "cacheReadTokens": 4426931296,
+    "totalTokens": 4710232631,
+    "totalCost": 3286.9632950160008
   }
 }
