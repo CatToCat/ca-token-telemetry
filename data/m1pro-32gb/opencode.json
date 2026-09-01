@@ -1498,14 +1498,69 @@
       "totalCost": 3.148476999999997,
       "totalTokens": 3188418,
       "costCapturedAt": "2026-08-29 04:11"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 66118867,
+      "date": "2026-09-01",
+      "inputTokens": 6708374,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 45129445,
+          "cost": 62.61350250000004,
+          "inputTokens": 5629771,
+          "modelName": "claude-opus-5",
+          "outputTokens": 475997
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 20989422,
+          "cost": 9.660475499999993,
+          "inputTokens": 1078603,
+          "modelName": "gpt-5.6-sol",
+          "outputTokens": 108616
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-5",
+        "gpt-5.6-sol"
+      ],
+      "outputTokens": 584613,
+      "totalCost": 72.27397800000007,
+      "totalTokens": 73444965,
+      "costCapturedAt": "2026-09-02 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 31896085,
+      "date": "2026-09-02",
+      "inputTokens": 1644465,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 31896085,
+          "cost": 12.167437499999997,
+          "inputTokens": 1644465,
+          "modelName": "gpt-5.6-sol",
+          "outputTokens": 85295
+        }
+      ],
+      "modelsUsed": [
+        "gpt-5.6-sol"
+      ],
+      "outputTokens": 85295,
+      "totalCost": 12.167437499999997,
+      "totalTokens": 33642801,
+      "costCapturedAt": "2026-09-02 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 225741587,
-    "outputTokens": 18525921,
+    "inputTokens": 234094426,
+    "outputTokens": 19195829,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 3628767295,
-    "totalTokens": 3873248573,
-    "totalCost": 2678.6720227983988
+    "cacheReadTokens": 3726782247,
+    "totalTokens": 3980336339,
+    "totalCost": 2763.1134382983987
   }
 }
