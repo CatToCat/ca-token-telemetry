@@ -2049,14 +2049,69 @@
       "totalCost": 29.20697492000001,
       "totalTokens": 60851869,
       "costCapturedAt": "2026-09-04 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 42478771,
+      "date": "2026-09-04",
+      "inputTokens": 2444645,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 11086513,
+          "cost": 3.695470459999999,
+          "inputTokens": 212988,
+          "modelName": "claude-sonnet-5",
+          "outputTokens": 71624
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 31392258,
+          "cost": 2.572739,
+          "inputTokens": 2231657,
+          "modelName": "gpt-5.6-luna",
+          "outputTokens": 30787
+        }
+      ],
+      "modelsUsed": [
+        "claude-sonnet-5",
+        "gpt-5.6-luna"
+      ],
+      "outputTokens": 102411,
+      "totalCost": 6.26820946,
+      "totalTokens": 45051887,
+      "costCapturedAt": "2026-09-05 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 478181,
+      "date": "2026-09-05",
+      "inputTokens": 105203,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 478181,
+          "cost": 0.17156300000000002,
+          "inputTokens": 105203,
+          "modelName": "gpt-5.6-luna",
+          "outputTokens": 9802
+        }
+      ],
+      "modelsUsed": [
+        "gpt-5.6-luna"
+      ],
+      "outputTokens": 9802,
+      "totalCost": 0.17156300000000002,
+      "totalTokens": 594444,
+      "costCapturedAt": "2026-09-05 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 283420823,
-    "outputTokens": 15587689,
+    "inputTokens": 285970671,
+    "outputTokens": 15699902,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 4712983299,
-    "totalTokens": 5012725591,
-    "totalCost": 3495.8521944360004
+    "cacheReadTokens": 4755940251,
+    "totalTokens": 5058371922,
+    "totalCost": 3502.2919668960003
   }
 }
