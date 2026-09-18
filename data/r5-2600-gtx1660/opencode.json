@@ -2387,34 +2387,75 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 8516457,
+      "cacheReadTokens": 83924917,
       "date": "2026-09-18",
-      "inputTokens": 525988,
+      "inputTokens": 2730173,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 8516457,
-          "cost": 9.251843500000003,
-          "inputTokens": 525988,
+          "cacheReadTokens": 28057540,
+          "cost": 29.663880000000002,
+          "inputTokens": 1775077,
           "modelName": "claude-opus-5",
-          "outputTokens": 94547
+          "outputTokens": 270389
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 55867377,
+          "cost": 7.464268500000002,
+          "inputTokens": 955096,
+          "modelName": "gpt-5.6-sol",
+          "outputTokens": 57760
         }
       ],
       "modelsUsed": [
-        "claude-opus-5"
+        "claude-opus-5",
+        "gpt-5.6-sol"
       ],
-      "outputTokens": 94547,
-      "totalCost": 9.251843500000003,
-      "totalTokens": 9136992,
-      "costCapturedAt": "2026-09-18 03:00"
+      "outputTokens": 328149,
+      "totalCost": 37.12814849999998,
+      "totalTokens": 87002532,
+      "costCapturedAt": "2026-09-19 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 7051447,
+      "date": "2026-09-19",
+      "inputTokens": 840072,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 3692312,
+          "cost": 5.3426610000000005,
+          "inputTokens": 588576,
+          "modelName": "claude-opus-5",
+          "outputTokens": 22145
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 3359135,
+          "cost": 1.638441,
+          "inputTokens": 251496,
+          "modelName": "gpt-5.6-sol",
+          "outputTokens": 3673
+        }
+      ],
+      "modelsUsed": [
+        "claude-opus-5",
+        "gpt-5.6-sol"
+      ],
+      "outputTokens": 25818,
+      "totalCost": 6.981102000000002,
+      "totalTokens": 7919418,
+      "costCapturedAt": "2026-09-19 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 306580092,
-    "outputTokens": 17736592,
+    "inputTokens": 309624349,
+    "outputTokens": 17996012,
     "cacheCreationTokens": 0,
-    "cacheReadTokens": 5123404046,
-    "totalTokens": 5448516110,
-    "totalCost": 3814.5534893960003
+    "cacheReadTokens": 5205863953,
+    "totalTokens": 5534301068,
+    "totalCost": 3849.410896396
   }
 }
