@@ -2656,44 +2656,125 @@
       "costCapturedAt": "2026-09-28 03:00"
     },
     {
-      "cacheCreationTokens": 606895,
-      "cacheReadTokens": 12003756,
+      "cacheCreationTokens": 5135767,
+      "cacheReadTokens": 49086518,
       "date": "2026-09-28",
-      "inputTokens": 386,
+      "inputTokens": 221458,
       "modelBreakdowns": [
         {
-          "cacheCreationTokens": 193523,
-          "cacheReadTokens": 9232806,
-          "cost": 6.7284267500000015,
-          "inputTokens": 166,
-          "modelName": "claude-opus-5",
-          "outputTokens": 36067
+          "cacheCreationTokens": 4883037,
+          "cacheReadTokens": 39418445,
+          "cost": 41.650246000000024,
+          "inputTokens": 22088,
+          "modelName": "claude-opus-5-5",
+          "outputTokens": 463151
         },
         {
-          "cacheCreationTokens": 413372,
-          "cacheReadTokens": 2770950,
-          "cost": 4.61351,
-          "inputTokens": 220,
-          "modelName": "claude-opus-5-5",
-          "outputTokens": 99579
+          "cacheCreationTokens": 214594,
+          "cacheReadTokens": 9266530,
+          "cost": 7.388062500000001,
+          "inputTokens": 21322,
+          "modelName": "claude-opus-5",
+          "outputTokens": 52279
+        },
+        {
+          "cacheCreationTokens": 38136,
+          "cacheReadTokens": 313081,
+          "cost": 0.5958015000000001,
+          "inputTokens": 18769,
+          "modelName": "gpt-5.6-sol",
+          "outputTokens": 20122
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 26293,
+          "cost": 0.36220965,
+          "inputTokens": 21457,
+          "modelName": "claude-opus-4-8",
+          "outputTokens": 8354
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 6656,
+          "cost": 0.217565,
+          "inputTokens": 19712,
+          "modelName": "gpt-5.4",
+          "outputTokens": 11040
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 9704,
+          "cost": 0.19587942,
+          "inputTokens": 17832,
+          "modelName": "claude-sonnet-4-6",
+          "outputTokens": 8111
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 13095,
+          "cost": 0.1398265,
+          "inputTokens": 21228,
+          "modelName": "claude-sonnet-5",
+          "outputTokens": 8204
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 7648,
+          "cost": 0.08734399999999999,
+          "inputTokens": 18734,
+          "modelName": "gpt-5.6-luna",
+          "outputTokens": 11040
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.07890074999999999,
+          "inputTokens": 34661,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 13945
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 9703,
+          "cost": 0.05142833,
+          "inputTokens": 17856,
+          "modelName": "claude-haiku-4-5",
+          "outputTokens": 8136
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 15363,
+          "cost": 0.0378125,
+          "inputTokens": 7799,
+          "modelName": "gpt-5.6-terra",
+          "outputTokens": 123
         }
       ],
       "modelsUsed": [
         "claude-opus-5",
-        "claude-opus-5-5"
+        "claude-opus-5-5",
+        "claude-sonnet-5",
+        "claude-opus-4-8",
+        "gpt-5.6-luna",
+        "gpt-5.6-terra",
+        "claude-sonnet-4-6",
+        "claude-haiku-4-5",
+        "gpt-5.4",
+        "gemini-3.7-flash",
+        "gpt-5.6-sol"
       ],
-      "outputTokens": 135646,
-      "totalCost": 11.341936749999999,
-      "totalTokens": 12746683,
-      "costCapturedAt": "2026-09-28 03:00"
+      "outputTokens": 604505,
+      "totalCost": 50.80507615000005,
+      "totalTokens": 55051436,
+      "costCapturedAt": "2026-09-29 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 312703851,
-    "outputTokens": 18659664,
-    "cacheCreationTokens": 4585190,
-    "cacheReadTokens": 5331805212,
-    "totalTokens": 5668586974,
-    "totalCost": 3945.1605765451995
+    "inputTokens": 312924923,
+    "outputTokens": 19128523,
+    "cacheCreationTokens": 9114062,
+    "cacheReadTokens": 5368887974,
+    "totalTokens": 5710891727,
+    "totalCost": 3984.6237159451994
   }
 }
