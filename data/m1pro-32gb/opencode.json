@@ -2069,14 +2069,37 @@
       "totalCost": 5.850324949999999,
       "totalTokens": 2619891,
       "costCapturedAt": "2026-10-01 04:05"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 3294501,
+      "date": "2026-10-01",
+      "inputTokens": 180142,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 3294501,
+          "cost": 0.07462371000000001,
+          "inputTokens": 180142,
+          "modelName": "gpt-6-luna",
+          "outputTokens": 14721
+        }
+      ],
+      "modelsUsed": [
+        "gpt-6-luna"
+      ],
+      "outputTokens": 14721,
+      "totalCost": 0.07462371000000001,
+      "totalTokens": 3521972,
+      "costCapturedAt": "2026-10-02 04:09"
     }
   ],
   "totals": {
-    "inputTokens": 268401522,
-    "outputTokens": 23816843,
+    "inputTokens": 268581664,
+    "outputTokens": 23831564,
     "cacheCreationTokens": 14772949,
-    "cacheReadTokens": 5023560912,
-    "totalTokens": 5331045023,
-    "totalCost": 3520.8374298347985
+    "cacheReadTokens": 5026855413,
+    "totalTokens": 5334566995,
+    "totalCost": 3520.9120535447987
   }
 }
