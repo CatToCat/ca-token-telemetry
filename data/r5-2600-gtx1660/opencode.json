@@ -3096,14 +3096,46 @@
       "totalCost": 4.450428525,
       "totalTokens": 38500076,
       "costCapturedAt": "2026-10-09 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 89222709,
+      "date": "2026-10-09",
+      "inputTokens": 4743632,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 89222709,
+          "cost": 10.734764175000011,
+          "inputTokens": 4455588,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 102470
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.29712900000000003,
+          "inputTokens": 288044,
+          "modelName": "claude-haiku-4-5",
+          "outputTokens": 1817
+        }
+      ],
+      "modelsUsed": [
+        "gemini-3.7-flash",
+        "claude-haiku-4-5"
+      ],
+      "outputTokens": 104287,
+      "totalCost": 11.03189317500001,
+      "totalTokens": 94155190,
+      "costCapturedAt": "2026-10-10 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 333023979,
-    "outputTokens": 20006207,
+    "inputTokens": 337767611,
+    "outputTokens": 20110494,
     "cacheCreationTokens": 13289759,
-    "cacheReadTokens": 5573170544,
-    "totalTokens": 5940592963,
-    "totalCost": 4158.140706401
+    "cacheReadTokens": 5662393253,
+    "totalTokens": 6034748153,
+    "totalCost": 4169.172599576
   }
 }

@@ -250,14 +250,37 @@
       "totalCost": 0.26361,
       "totalTokens": 42571,
       "costCapturedAt": "2026-08-14 03:00"
+    },
+    {
+      "cacheCreationTokens": 40336,
+      "cacheReadTokens": 0,
+      "date": "2026-10-09",
+      "inputTokens": 3,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 40336,
+          "cacheReadTokens": 0,
+          "cost": 0.151449,
+          "inputTokens": 3,
+          "modelName": "claude-sonnet-4-6",
+          "outputTokens": 12
+        }
+      ],
+      "modelsUsed": [
+        "claude-sonnet-4-6"
+      ],
+      "outputTokens": 12,
+      "totalCost": 0.151449,
+      "totalTokens": 40351,
+      "costCapturedAt": "2026-10-10 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 3434262,
-    "outputTokens": 18682,
-    "cacheCreationTokens": 1430311,
+    "inputTokens": 3434265,
+    "outputTokens": 18694,
+    "cacheCreationTokens": 1470647,
     "cacheReadTokens": 2248863,
-    "totalTokens": 7132118,
-    "totalCost": 26.08386025
+    "totalTokens": 7172469,
+    "totalCost": 26.23530925
   }
 }
