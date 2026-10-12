@@ -3174,14 +3174,69 @@
       "totalCost": 2.5111229999999995,
       "totalTokens": 18467297,
       "costCapturedAt": "2026-10-12 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 3683597,
+      "date": "2026-10-12",
+      "inputTokens": 209665,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 3683597,
+          "cost": 0.43700227499999994,
+          "inputTokens": 193705,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 4121
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.016825,
+          "inputTokens": 15960,
+          "modelName": "claude-haiku-4-5",
+          "outputTokens": 173
+        }
+      ],
+      "modelsUsed": [
+        "gemini-3.7-flash",
+        "claude-haiku-4-5"
+      ],
+      "outputTokens": 4294,
+      "totalCost": 0.4538272749999999,
+      "totalTokens": 3897556,
+      "costCapturedAt": "2026-10-13 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 6338600,
+      "date": "2026-10-13",
+      "inputTokens": 301430,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 6338600,
+          "cost": 11.86025,
+          "inputTokens": 301430,
+          "modelName": "gpt-6-astra",
+          "outputTokens": 14410
+        }
+      ],
+      "modelsUsed": [
+        "gpt-6-astra"
+      ],
+      "outputTokens": 14410,
+      "totalCost": 11.86025,
+      "totalTokens": 6690177,
+      "costCapturedAt": "2026-10-13 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 340840064,
-    "outputTokens": 20154937,
+    "inputTokens": 341351159,
+    "outputTokens": 20173641,
     "cacheCreationTokens": 13289759,
-    "cacheReadTokens": 5722968107,
-    "totalTokens": 6098460599,
-    "totalCost": 4176.264324626
+    "cacheReadTokens": 5732990304,
+    "totalTokens": 6109048332,
+    "totalCost": 4188.578401901
   }
 }
