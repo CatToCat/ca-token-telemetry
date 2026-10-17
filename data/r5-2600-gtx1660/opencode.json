@@ -3346,9 +3346,9 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 0,
+      "cacheReadTokens": 42705664,
       "date": "2026-10-17",
-      "inputTokens": 2523676,
+      "inputTokens": 4754536,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
@@ -3357,23 +3357,32 @@
           "inputTokens": 2523676,
           "modelName": "claude-haiku-4-5",
           "outputTokens": 28764
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 42705664,
+          "cost": 0.7391114984,
+          "inputTokens": 2230860,
+          "modelName": "deepseek-v4.1-flash-free",
+          "outputTokens": 106325
         }
       ],
       "modelsUsed": [
-        "claude-haiku-4-5"
+        "claude-haiku-4-5",
+        "deepseek-v4.1-flash-free"
       ],
-      "outputTokens": 28764,
-      "totalCost": 2.667495999999999,
-      "totalTokens": 2552440,
-      "costCapturedAt": "2026-10-17 03:00"
+      "outputTokens": 135089,
+      "totalCost": 3.4066074983999997,
+      "totalTokens": 47909836,
+      "costCapturedAt": "2026-10-18 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 387535558,
-    "outputTokens": 20526082,
+    "inputTokens": 389766418,
+    "outputTokens": 20632407,
     "cacheCreationTokens": 13289759,
-    "cacheReadTokens": 5817341938,
-    "totalTokens": 6240193298,
-    "totalCost": 4239.3820167774
+    "cacheReadTokens": 5860047602,
+    "totalTokens": 6285550694,
+    "totalCost": 4240.1211282758
   }
 }
