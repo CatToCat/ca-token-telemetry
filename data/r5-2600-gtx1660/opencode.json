@@ -3375,14 +3375,69 @@
       "totalCost": 3.4066074983999997,
       "totalTokens": 47909836,
       "costCapturedAt": "2026-10-18 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 25762304,
+      "date": "2026-10-18",
+      "inputTokens": 17379586,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 15.305631000000002,
+          "inputTokens": 14848481,
+          "modelName": "claude-haiku-4-5",
+          "outputTokens": 91430
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 25762304,
+          "cost": 0.7579319682,
+          "inputTokens": 2531105,
+          "modelName": "deepseek-v4.1-flash-free",
+          "outputTokens": 254245
+        }
+      ],
+      "modelsUsed": [
+        "deepseek-v4.1-flash-free",
+        "claude-haiku-4-5"
+      ],
+      "outputTokens": 345675,
+      "totalCost": 16.063562968200003,
+      "totalTokens": 43620114,
+      "costCapturedAt": "2026-10-19 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "date": "2026-10-19",
+      "inputTokens": 7059280,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 7.3248950000000015,
+          "inputTokens": 7059280,
+          "modelName": "claude-haiku-4-5",
+          "outputTokens": 53123
+        }
+      ],
+      "modelsUsed": [
+        "claude-haiku-4-5"
+      ],
+      "outputTokens": 53123,
+      "totalCost": 7.3248950000000015,
+      "totalTokens": 7112403,
+      "costCapturedAt": "2026-10-19 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 389766418,
-    "outputTokens": 20632407,
+    "inputTokens": 414205284,
+    "outputTokens": 21031205,
     "cacheCreationTokens": 13289759,
-    "cacheReadTokens": 5860047602,
-    "totalTokens": 6285550694,
-    "totalCost": 4240.1211282758
+    "cacheReadTokens": 5885809906,
+    "totalTokens": 6336283211,
+    "totalCost": 4263.509586244
   }
 }
