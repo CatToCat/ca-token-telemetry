@@ -3412,32 +3412,64 @@
       "cacheCreationTokens": 0,
       "cacheReadTokens": 0,
       "date": "2026-10-19",
-      "inputTokens": 7059280,
+      "inputTokens": 26062447,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
           "cacheReadTokens": 0,
-          "cost": 7.3248950000000015,
-          "inputTokens": 7059280,
+          "cost": 26.72544299999999,
+          "inputTokens": 26002038,
           "modelName": "claude-haiku-4-5",
-          "outputTokens": 53123
+          "outputTokens": 144681
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.0015746650000000003,
+          "inputTokens": 60409,
+          "modelName": "nvidia/nemotron-3.5-lightning",
+          "outputTokens": 372
         }
       ],
       "modelsUsed": [
-        "claude-haiku-4-5"
+        "claude-haiku-4-5",
+        "nvidia/nemotron-3.5-lightning"
       ],
-      "outputTokens": 53123,
-      "totalCost": 7.3248950000000015,
-      "totalTokens": 7112403,
-      "costCapturedAt": "2026-10-19 03:00"
+      "outputTokens": 145053,
+      "totalCost": 26.72701766499999,
+      "totalTokens": 26207665,
+      "costCapturedAt": "2026-10-20 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 1024,
+      "date": "2026-10-20",
+      "inputTokens": 23188,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 1024,
+          "cost": 0.0245392,
+          "inputTokens": 23188,
+          "modelName": "rits/zai-org/glm-5-3",
+          "outputTokens": 128
+        }
+      ],
+      "modelsUsed": [
+        "rits/zai-org/glm-5-3"
+      ],
+      "outputTokens": 128,
+      "totalCost": 0.0245392,
+      "totalTokens": 24473,
+      "costCapturedAt": "2026-10-20 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 414205284,
-    "outputTokens": 21031205,
+    "inputTokens": 433231639,
+    "outputTokens": 21123263,
     "cacheCreationTokens": 13289759,
-    "cacheReadTokens": 5885809906,
-    "totalTokens": 6336283211,
-    "totalCost": 4263.509586244
+    "cacheReadTokens": 5885810930,
+    "totalTokens": 6355402946,
+    "totalCost": 4282.936248109
   }
 }
