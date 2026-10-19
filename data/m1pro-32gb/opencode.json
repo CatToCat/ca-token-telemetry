@@ -2184,14 +2184,64 @@
       "totalCost": 0.197069475,
       "totalTokens": 547145,
       "costCapturedAt": "2026-10-16 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 4762214,
+      "date": "2026-10-19",
+      "inputTokens": 3080911,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 4761190,
+          "cost": 8.18184,
+          "inputTokens": 133625,
+          "modelName": "gpt-6-astra",
+          "outputTokens": 39066
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 2.7347740000000007,
+          "inputTokens": 2711739,
+          "modelName": "claude-haiku-4-5",
+          "outputTokens": 4607
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.3009325,
+          "inputTokens": 120343,
+          "modelName": "gpt-5.4-gus",
+          "outputTokens": 5
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 1024,
+          "cost": 0.11607519999999999,
+          "inputTokens": 115204,
+          "modelName": "rits/zai-org/glm-5-3",
+          "outputTokens": 80
+        }
+      ],
+      "modelsUsed": [
+        "gpt-6-astra",
+        "gpt-5.4-gus",
+        "rits/zai-org/glm-5-3",
+        "claude-haiku-4-5"
+      ],
+      "outputTokens": 43758,
+      "totalCost": 11.3336217,
+      "totalTokens": 7889566,
+      "costCapturedAt": "2026-10-20 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 269084714,
-    "outputTokens": 23868101,
+    "inputTokens": 272165625,
+    "outputTokens": 23911859,
     "cacheCreationTokens": 14772949,
-    "cacheReadTokens": 5027347516,
-    "totalTokens": 5335603166,
-    "totalCost": 3521.4800662697985
+    "cacheReadTokens": 5032109730,
+    "totalTokens": 5343492732,
+    "totalCost": 3532.8136879697986
   }
 }
