@@ -3442,34 +3442,102 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 1024,
+      "cacheReadTokens": 30965112,
       "date": "2026-10-20",
-      "inputTokens": 23188,
+      "inputTokens": 4056549,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 1024,
-          "cost": 0.0245392,
-          "inputTokens": 23188,
+          "cacheReadTokens": 2080006,
+          "cost": 5.673886,
+          "inputTokens": 152313,
+          "modelName": "gpt-6-astra",
+          "outputTokens": 16014
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 2.841544999999999,
+          "inputTokens": 2803465,
+          "modelName": "claude-haiku-4-5",
+          "outputTokens": 7616
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 23681119,
+          "cost": 2.6677034249999996,
+          "inputTokens": 812621,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 41463
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 5174291,
+          "cost": 1.1008151,
+          "inputTokens": 241873,
+          "modelName": "gemini-4-argon",
+          "outputTokens": 9964
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 29696,
+          "cost": 0.048271800000000004,
+          "inputTokens": 36671,
           "modelName": "rits/zai-org/glm-5-3",
-          "outputTokens": 128
+          "outputTokens": 286
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.0024025,
+          "inputTokens": 9606,
+          "modelName": "meta-llama/llama-4-maverick-17b-128e-instruct-fp8",
+          "outputTokens": 1
         }
       ],
       "modelsUsed": [
-        "rits/zai-org/glm-5-3"
+        "rits/zai-org/glm-5-3",
+        "claude-haiku-4-5",
+        "gemini-4-argon",
+        "gemini-3.7-flash",
+        "meta-llama/llama-4-maverick-17b-128e-instruct-fp8",
+        "gpt-6-astra"
       ],
-      "outputTokens": 128,
-      "totalCost": 0.0245392,
-      "totalTokens": 24473,
-      "costCapturedAt": "2026-10-20 03:00"
+      "outputTokens": 75344,
+      "totalCost": 12.334623824999996,
+      "totalTokens": 35156571,
+      "costCapturedAt": "2026-10-21 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "date": "2026-10-21",
+      "inputTokens": 47178,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.052011,
+          "inputTokens": 47178,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 1558
+        }
+      ],
+      "modelsUsed": [
+        "gemini-3.7-flash"
+      ],
+      "outputTokens": 1558,
+      "totalCost": 0.052011,
+      "totalTokens": 51612,
+      "costCapturedAt": "2026-10-21 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 433231639,
-    "outputTokens": 21123263,
+    "inputTokens": 437312178,
+    "outputTokens": 21200037,
     "cacheCreationTokens": 13289759,
-    "cacheReadTokens": 5885810930,
-    "totalTokens": 6355402946,
-    "totalCost": 4282.936248109
+    "cacheReadTokens": 5916775018,
+    "totalTokens": 6390586656,
+    "totalCost": 4295.298343734
   }
 }
