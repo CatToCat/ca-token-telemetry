@@ -2234,14 +2234,46 @@
       "totalCost": 11.3336217,
       "totalTokens": 7889566,
       "costCapturedAt": "2026-10-20 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "date": "2026-10-20",
+      "inputTokens": 35472,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.1465,
+          "inputTokens": 9440,
+          "modelName": "gpt-6-astra",
+          "outputTokens": 1042
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.027967,
+          "inputTokens": 26032,
+          "modelName": "claude-haiku-4-5",
+          "outputTokens": 387
+        }
+      ],
+      "modelsUsed": [
+        "claude-haiku-4-5",
+        "gpt-6-astra"
+      ],
+      "outputTokens": 1429,
+      "totalCost": 0.17446699999999998,
+      "totalTokens": 36901,
+      "costCapturedAt": "2026-10-21 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 272165625,
-    "outputTokens": 23911859,
+    "inputTokens": 272201097,
+    "outputTokens": 23913288,
     "cacheCreationTokens": 14772949,
     "cacheReadTokens": 5032109730,
-    "totalTokens": 5343492732,
-    "totalCost": 3532.8136879697986
+    "totalTokens": 5343529633,
+    "totalCost": 3532.9881549697984
   }
 }
