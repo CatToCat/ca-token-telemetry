@@ -3510,34 +3510,75 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 0,
+      "cacheReadTokens": 17991707,
       "date": "2026-10-21",
-      "inputTokens": 47178,
+      "inputTokens": 789150,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 0,
-          "cost": 0.052011,
-          "inputTokens": 47178,
+          "cacheReadTokens": 15355284,
+          "cost": 1.6457530500000006,
+          "inputTokens": 452309,
           "modelName": "gemini-3.7-flash",
-          "outputTokens": 1558
+          "outputTokens": 15792
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 1654407,
+          "cost": 0.7333907,
+          "inputTokens": 244870,
+          "modelName": "gemini-4-argon",
+          "outputTokens": 7821
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 982016,
+          "cost": 0.4504237999999999,
+          "inputTokens": 91971,
+          "modelName": "rits/zai-org/glm-5-3",
+          "outputTokens": 2503
         }
       ],
       "modelsUsed": [
-        "gemini-3.7-flash"
+        "gemini-3.7-flash",
+        "rits/zai-org/glm-5-3",
+        "gemini-4-argon"
       ],
-      "outputTokens": 1558,
-      "totalCost": 0.052011,
-      "totalTokens": 51612,
-      "costCapturedAt": "2026-10-21 03:00"
+      "outputTokens": 26116,
+      "totalCost": 2.82956755,
+      "totalTokens": 18845940,
+      "costCapturedAt": "2026-10-22 03:01"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 13165946,
+      "date": "2026-10-22",
+      "inputTokens": 717873,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 13165946,
+          "cost": 3.0538805999999994,
+          "inputTokens": 717873,
+          "modelName": "gemini-4-argon",
+          "outputTokens": 30154
+        }
+      ],
+      "modelsUsed": [
+        "gemini-4-argon"
+      ],
+      "outputTokens": 30154,
+      "totalCost": 3.0538805999999994,
+      "totalTokens": 13913973,
+      "costCapturedAt": "2026-10-22 03:01"
     }
   ],
   "totals": {
-    "inputTokens": 437312178,
-    "outputTokens": 21200037,
+    "inputTokens": 438772023,
+    "outputTokens": 21254749,
     "cacheCreationTokens": 13289759,
-    "cacheReadTokens": 5916775018,
-    "totalTokens": 6390586656,
-    "totalCost": 4295.298343734
+    "cacheReadTokens": 5947932671,
+    "totalTokens": 6423294957,
+    "totalCost": 4301.129780884001
   }
 }
