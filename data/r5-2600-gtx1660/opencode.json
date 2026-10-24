@@ -3624,17 +3624,17 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 7910006,
+      "cacheReadTokens": 14332689,
       "date": "2026-10-24",
-      "inputTokens": 462963,
+      "inputTokens": 785648,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 7484103,
-          "cost": 14.892093000000001,
-          "inputTokens": 408854,
+          "cacheReadTokens": 13906786,
+          "cost": 27.266826,
+          "inputTokens": 731539,
           "modelName": "gpt-6-astra",
-          "outputTokens": 21110
+          "outputTokens": 50812
         },
         {
           "cacheCreationTokens": 0,
@@ -3658,18 +3658,41 @@
         "gpt-6-astra",
         "gpt-6.1-sol"
       ],
-      "outputTokens": 22203,
-      "totalCost": 15.0684666,
-      "totalTokens": 8440783,
-      "costCapturedAt": "2026-10-24 03:00"
+      "outputTokens": 51905,
+      "totalCost": 27.443199599999996,
+      "totalTokens": 15240655,
+      "costCapturedAt": "2026-10-25 03:01"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 2777599,
+      "date": "2026-10-25",
+      "inputTokens": 383547,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 2777599,
+          "cost": 0.6245639249999998,
+          "inputTokens": 383547,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 10753
+        }
+      ],
+      "modelsUsed": [
+        "gemini-3.7-flash"
+      ],
+      "outputTokens": 10753,
+      "totalCost": 0.6245639249999998,
+      "totalTokens": 3195435,
+      "costCapturedAt": "2026-10-25 03:01"
     }
   ],
   "totals": {
-    "inputTokens": 450520059,
-    "outputTokens": 21426680,
+    "inputTokens": 451226291,
+    "outputTokens": 21467135,
     "cacheCreationTokens": 13289759,
-    "cacheReadTokens": 6025063616,
-    "totalTokens": 6512409393,
-    "totalCost": 4340.247269084
+    "cacheReadTokens": 6034263898,
+    "totalTokens": 6522404700,
+    "totalCost": 4353.246566009001
   }
 }
