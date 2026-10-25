@@ -3665,34 +3665,75 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 2777599,
+      "cacheReadTokens": 36768325,
       "date": "2026-10-25",
-      "inputTokens": 383547,
+      "inputTokens": 3085609,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 2777599,
-          "cost": 0.6245639249999998,
-          "inputTokens": 383547,
+          "cacheReadTokens": 26877905,
+          "cost": 4.787092874999997,
+          "inputTokens": 2719985,
           "modelName": "gemini-3.7-flash",
-          "outputTokens": 10753
+          "outputTokens": 99085
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 581364,
+          "cost": 0.3580868,
+          "inputTokens": 84512,
+          "modelName": "gpt-6-sol",
+          "outputTokens": 4012
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 9309056,
+          "cost": 0.22761633600000003,
+          "inputTokens": 281112,
+          "modelName": "deepseek-v4.1-flash-free",
+          "outputTokens": 23093
+        }
+      ],
+      "modelsUsed": [
+        "gemini-3.7-flash",
+        "gpt-6-sol",
+        "deepseek-v4.1-flash-free"
+      ],
+      "outputTokens": 126190,
+      "totalCost": 5.372796010999997,
+      "totalTokens": 40129073,
+      "costCapturedAt": "2026-10-26 03:01"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "date": "2026-10-26",
+      "inputTokens": 108691,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.08212575,
+          "inputTokens": 108691,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 34
         }
       ],
       "modelsUsed": [
         "gemini-3.7-flash"
       ],
-      "outputTokens": 10753,
-      "totalCost": 0.6245639249999998,
-      "totalTokens": 3195435,
-      "costCapturedAt": "2026-10-25 03:01"
+      "outputTokens": 34,
+      "totalCost": 0.08212575,
+      "totalTokens": 108853,
+      "costCapturedAt": "2026-10-26 03:01"
     }
   ],
   "totals": {
-    "inputTokens": 451226291,
-    "outputTokens": 21467135,
+    "inputTokens": 454037044,
+    "outputTokens": 21582606,
     "cacheCreationTokens": 13289759,
-    "cacheReadTokens": 6034263898,
-    "totalTokens": 6522404700,
-    "totalCost": 4353.246566009001
+    "cacheReadTokens": 6068254624,
+    "totalTokens": 6559447191,
+    "totalCost": 4358.076923845001
   }
 }
