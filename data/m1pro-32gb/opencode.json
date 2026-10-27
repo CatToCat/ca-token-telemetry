@@ -2344,14 +2344,37 @@
       "totalCost": 1.84719,
       "totalTokens": 638994,
       "costCapturedAt": "2026-10-27 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 63679,
+      "date": "2026-10-27",
+      "inputTokens": 30082,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 63679,
+          "cost": 0.388099,
+          "inputTokens": 30082,
+          "modelName": "gpt-6-astra",
+          "outputTokens": 366
+        }
+      ],
+      "modelsUsed": [
+        "gpt-6-astra"
+      ],
+      "outputTokens": 366,
+      "totalCost": 0.388099,
+      "totalTokens": 94233,
+      "costCapturedAt": "2026-10-28 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 272301382,
-    "outputTokens": 23922820,
+    "inputTokens": 272331464,
+    "outputTokens": 23923186,
     "cacheCreationTokens": 14772949,
-    "cacheReadTokens": 5032707780,
-    "totalTokens": 5344241671,
-    "totalCost": 3535.1269009697985
+    "cacheReadTokens": 5032771459,
+    "totalTokens": 5344335904,
+    "totalCost": 3535.5149999697983
   }
 }
