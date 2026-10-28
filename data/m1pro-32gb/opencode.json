@@ -2367,14 +2367,46 @@
       "totalCost": 0.388099,
       "totalTokens": 94233,
       "costCapturedAt": "2026-10-28 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 16250,
+      "date": "2026-10-28",
+      "inputTokens": 38121,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.10023,
+          "inputTokens": 9813,
+          "modelName": "gpt-6-astra",
+          "outputTokens": 42
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 16250,
+          "cost": 0.041586,
+          "inputTokens": 28308,
+          "modelName": "gemini-3.6-flash",
+          "outputTokens": 1640
+        }
+      ],
+      "modelsUsed": [
+        "gpt-6-astra",
+        "gemini-3.6-flash"
+      ],
+      "outputTokens": 1682,
+      "totalCost": 0.141816,
+      "totalTokens": 59516,
+      "costCapturedAt": "2026-10-29 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 272331464,
-    "outputTokens": 23923186,
+    "inputTokens": 272369585,
+    "outputTokens": 23924868,
     "cacheCreationTokens": 14772949,
-    "cacheReadTokens": 5032771459,
-    "totalTokens": 5344335904,
-    "totalCost": 3535.5149999697983
+    "cacheReadTokens": 5032787709,
+    "totalTokens": 5344395420,
+    "totalCost": 3535.656815969798
   }
 }
