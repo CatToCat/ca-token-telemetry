@@ -3918,14 +3918,69 @@
       "totalCost": 1.8807637500000007,
       "totalTokens": 15148208,
       "costCapturedAt": "2026-11-05 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 30959604,
+      "date": "2026-11-07",
+      "inputTokens": 1988840,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 16354778,
+          "cost": 33.24201799999999,
+          "inputTokens": 1110344,
+          "modelName": "gpt-6-astra",
+          "outputTokens": 52692
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 14604826,
+          "cost": 2.0423014499999996,
+          "inputTokens": 878496,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 37168
+        }
+      ],
+      "modelsUsed": [
+        "gemini-3.7-flash",
+        "gpt-6-astra"
+      ],
+      "outputTokens": 89860,
+      "totalCost": 35.28431944999998,
+      "totalTokens": 33140938,
+      "costCapturedAt": "2026-11-08 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 8739759,
+      "date": "2026-11-08",
+      "inputTokens": 509111,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 8739759,
+          "cost": 0.18656369,
+          "inputTokens": 509111,
+          "modelName": "gpt-6-luna",
+          "outputTokens": 16209
+        }
+      ],
+      "modelsUsed": [
+        "gpt-6-luna"
+      ],
+      "outputTokens": 16209,
+      "totalCost": 0.18656369,
+      "totalTokens": 9345380,
+      "costCapturedAt": "2026-11-08 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 475246826,
-    "outputTokens": 22380593,
+    "inputTokens": 477744777,
+    "outputTokens": 22486662,
     "cacheCreationTokens": 13289759,
-    "cacheReadTokens": 6513678367,
-    "totalTokens": 7027598913,
-    "totalCost": 4470.205424014801
+    "cacheReadTokens": 6553377730,
+    "totalTokens": 7070085231,
+    "totalCost": 4505.676307154801
   }
 }
