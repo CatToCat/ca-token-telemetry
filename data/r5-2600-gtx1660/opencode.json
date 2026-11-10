@@ -4041,14 +4041,55 @@
       "totalCost": 6.319381675,
       "totalTokens": 46989748,
       "costCapturedAt": "2026-11-10 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 14340079,
+      "date": "2026-11-10",
+      "inputTokens": 786470,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 8698413,
+          "cost": 1.1248854750000001,
+          "inputTokens": 476051,
+          "modelName": "gemini-3.6-flash",
+          "outputTokens": 13288
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 819522,
+          "cost": 0.17031315,
+          "inputTokens": 111072,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 1270
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 4822144,
+          "cost": 0.15699776399999998,
+          "inputTokens": 199347,
+          "modelName": "deepseek-v4.1-flash-free",
+          "outputTokens": 21585
+        }
+      ],
+      "modelsUsed": [
+        "gemini-3.7-flash",
+        "gemini-3.6-flash",
+        "deepseek-v4.1-flash-free"
+      ],
+      "outputTokens": 36143,
+      "totalCost": 1.4521963889999994,
+      "totalTokens": 15221036,
+      "costCapturedAt": "2026-11-11 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 484360046,
-    "outputTokens": 22728914,
+    "inputTokens": 485146516,
+    "outputTokens": 22765057,
     "cacheCreationTokens": 13289759,
-    "cacheReadTokens": 6685534476,
-    "totalTokens": 7209473639,
-    "totalCost": 4524.214685354801
+    "cacheReadTokens": 6699874555,
+    "totalTokens": 7224694675,
+    "totalCost": 4525.666881743801
   }
 }
