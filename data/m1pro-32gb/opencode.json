@@ -2646,14 +2646,60 @@
       "totalCost": 0.6702613209999998,
       "totalTokens": 2798813,
       "costCapturedAt": "2026-11-11 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 2048,
+      "date": "2026-11-11",
+      "inputTokens": 125002,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 2048,
+          "cost": 0.044016888000000004,
+          "inputTokens": 125002,
+          "modelName": "deepseek-v4.1-flash-free",
+          "outputTokens": 2849
+        }
+      ],
+      "modelsUsed": [
+        "deepseek-v4.1-flash-free"
+      ],
+      "outputTokens": 2849,
+      "totalCost": 0.044016888000000004,
+      "totalTokens": 132470,
+      "costCapturedAt": "2026-11-12 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 251776,
+      "date": "2026-11-12",
+      "inputTokens": 231,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 251776,
+          "cost": 0.010864356,
+          "inputTokens": 231,
+          "modelName": "deepseek-v4.1-flash-free",
+          "outputTokens": 4946
+        }
+      ],
+      "modelsUsed": [
+        "deepseek-v4.1-flash-free"
+      ],
+      "outputTokens": 4946,
+      "totalCost": 0.010864356,
+      "totalTokens": 259744,
+      "costCapturedAt": "2026-11-12 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 275379905,
-    "outputTokens": 24179422,
+    "inputTokens": 275505138,
+    "outputTokens": 24187217,
     "cacheCreationTokens": 14772949,
-    "cacheReadTokens": 5071642178,
-    "totalTokens": 5386651644,
-    "totalCost": 3592.2821250093984
+    "cacheReadTokens": 5071896002,
+    "totalTokens": 5387043858,
+    "totalCost": 3592.3370062533986
   }
 }
