@@ -2671,11 +2671,27 @@
       "costCapturedAt": "2026-11-12 04:00"
     },
     {
-      "cacheCreationTokens": 0,
-      "cacheReadTokens": 251776,
+      "cacheCreationTokens": 828055,
+      "cacheReadTokens": 18873885,
       "date": "2026-11-12",
-      "inputTokens": 231,
+      "inputTokens": 31526,
       "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 828055,
+          "cacheReadTokens": 18590416,
+          "cost": 0.3887458205000003,
+          "inputTokens": 924,
+          "modelName": "gpt-6-luna",
+          "outputTokens": 77424
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 31693,
+          "cost": 0.034995225000000005,
+          "inputTokens": 30371,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 923
+        },
         {
           "cacheCreationTokens": 0,
           "cacheReadTokens": 251776,
@@ -2686,20 +2702,22 @@
         }
       ],
       "modelsUsed": [
-        "deepseek-v4.1-flash-free"
+        "deepseek-v4.1-flash-free",
+        "gemini-3.7-flash",
+        "gpt-6-luna"
       ],
-      "outputTokens": 4946,
-      "totalCost": 0.010864356,
-      "totalTokens": 259744,
-      "costCapturedAt": "2026-11-12 04:00"
+      "outputTokens": 83293,
+      "totalCost": 0.43460540150000015,
+      "totalTokens": 19952859,
+      "costCapturedAt": "2026-11-13 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 275505138,
-    "outputTokens": 24187217,
-    "cacheCreationTokens": 14772949,
-    "cacheReadTokens": 5071896002,
-    "totalTokens": 5387043858,
-    "totalCost": 3592.3370062533986
+    "inputTokens": 275536433,
+    "outputTokens": 24265564,
+    "cacheCreationTokens": 15601004,
+    "cacheReadTokens": 5090518111,
+    "totalTokens": 5406736973,
+    "totalCost": 3592.7607472988984
   }
 }
