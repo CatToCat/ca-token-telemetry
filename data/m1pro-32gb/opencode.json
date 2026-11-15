@@ -2756,14 +2756,37 @@
       "totalCost": 0.31845022500000003,
       "totalTokens": 1703586,
       "costCapturedAt": "2026-11-15 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "date": "2026-11-15",
+      "inputTokens": 9344,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.01245675,
+          "inputTokens": 9344,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 667
+        }
+      ],
+      "modelsUsed": [
+        "gemini-3.7-flash"
+      ],
+      "outputTokens": 667,
+      "totalCost": 0.01245675,
+      "totalTokens": 10797,
+      "costCapturedAt": "2026-11-16 04:09"
     }
   ],
   "totals": {
-    "inputTokens": 275754394,
-    "outputTokens": 24297715,
+    "inputTokens": 275763738,
+    "outputTokens": 24298382,
     "cacheCreationTokens": 15883951,
     "cacheReadTokens": 5100967220,
-    "totalTokens": 5417781512,
-    "totalCost": 3593.2456540588987
+    "totalTokens": 5417792309,
+    "totalCost": 3593.258110808899
   }
 }
