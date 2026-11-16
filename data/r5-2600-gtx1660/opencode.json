@@ -4389,34 +4389,75 @@
     },
     {
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 0,
+      "cacheReadTokens": 101321127,
       "date": "2026-11-16",
-      "inputTokens": 27651,
+      "inputTokens": 4736850,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 0,
-          "cost": 0.033282,
-          "inputTokens": 27651,
+          "cacheReadTokens": 55277062,
+          "cost": 6.974325900000004,
+          "inputTokens": 3231230,
+          "modelName": "gemini-3.6-flash",
+          "outputTokens": 66513
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 10898593,
+          "cost": 1.5395619750000005,
+          "inputTokens": 686150,
           "modelName": "gemini-3.7-flash",
-          "outputTokens": 1788
+          "outputTokens": 26082
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 35145472,
+          "cost": 0.3831574332,
+          "inputTokens": 819470,
+          "modelName": "deepseek-v4.1-flash-free",
+          "outputTokens": 89225
         }
       ],
       "modelsUsed": [
-        "gemini-3.7-flash"
+        "gemini-3.7-flash",
+        "deepseek-v4.1-flash-free",
+        "gemini-3.6-flash"
       ],
-      "outputTokens": 1788,
-      "totalCost": 0.033282,
-      "totalTokens": 30996,
-      "costCapturedAt": "2026-11-16 03:00"
+      "outputTokens": 181820,
+      "totalCost": 8.897045308199989,
+      "totalTokens": 106458759,
+      "costCapturedAt": "2026-11-17 03:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 14274944,
+      "date": "2026-11-17",
+      "inputTokens": 262766,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 14274944,
+          "cost": 0.1397623964000001,
+          "inputTokens": 262766,
+          "modelName": "deepseek-v4.1-flash-free",
+          "outputTokens": 37944
+        }
+      ],
+      "modelsUsed": [
+        "deepseek-v4.1-flash-free"
+      ],
+      "outputTokens": 37944,
+      "totalCost": 0.1397623964000001,
+      "totalTokens": 14626067,
+      "costCapturedAt": "2026-11-17 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 502064317,
-    "outputTokens": 23376071,
+    "inputTokens": 507036282,
+    "outputTokens": 23594047,
     "cacheCreationTokens": 15449051,
-    "cacheReadTokens": 6968841851,
-    "totalTokens": 7514146372,
-    "totalCost": 4583.815464341901
+    "cacheReadTokens": 7084437922,
+    "totalTokens": 7635200202,
+    "totalCost": 4592.818990046501
   }
 }
