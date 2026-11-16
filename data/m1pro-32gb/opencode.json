@@ -2779,14 +2779,69 @@
       "totalCost": 0.01245675,
       "totalTokens": 10797,
       "costCapturedAt": "2026-11-16 04:09"
+    },
+    {
+      "cacheCreationTokens": 71849,
+      "cacheReadTokens": 2164771,
+      "date": "2026-11-16",
+      "inputTokens": 18565,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 71849,
+          "cacheReadTokens": 2164771,
+          "cost": 0.7775847,
+          "inputTokens": 1559,
+          "modelName": "gpt-6-sol",
+          "outputTokens": 12153
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.020588250000000002,
+          "inputTokens": 17006,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 515
+        }
+      ],
+      "modelsUsed": [
+        "gemini-3.7-flash",
+        "gpt-6-sol"
+      ],
+      "outputTokens": 12668,
+      "totalCost": 0.7981729500000001,
+      "totalTokens": 2273463,
+      "costCapturedAt": "2026-11-17 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 0,
+      "date": "2026-11-17",
+      "inputTokens": 8723,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "cost": 0.006639750000000001,
+          "inputTokens": 8723,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 9
+        }
+      ],
+      "modelsUsed": [
+        "gemini-3.7-flash"
+      ],
+      "outputTokens": 9,
+      "totalCost": 0.006639750000000001,
+      "totalTokens": 8749,
+      "costCapturedAt": "2026-11-17 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 275763738,
-    "outputTokens": 24298382,
-    "cacheCreationTokens": 15883951,
-    "cacheReadTokens": 5100967220,
-    "totalTokens": 5417792309,
-    "totalCost": 3593.258110808899
+    "inputTokens": 275791026,
+    "outputTokens": 24311059,
+    "cacheCreationTokens": 15955800,
+    "cacheReadTokens": 5103131991,
+    "totalTokens": 5420074521,
+    "totalCost": 3594.062923508899
   }
 }
