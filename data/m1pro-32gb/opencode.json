@@ -2866,14 +2866,78 @@
       "totalCost": 0.15231674999999997,
       "totalTokens": 686044,
       "costCapturedAt": "2026-11-19 04:00"
+    },
+    {
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 4305391,
+      "date": "2026-11-19",
+      "inputTokens": 590496,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 4279931,
+          "cost": 0.8688608250000001,
+          "inputTokens": 522713,
+          "modelName": "gemini-3.6-flash",
+          "outputTokens": 22290
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 25460,
+          "cost": 0.07262924999999999,
+          "inputTokens": 67783,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 3480
+        }
+      ],
+      "modelsUsed": [
+        "gemini-3.7-flash",
+        "gemini-3.6-flash"
+      ],
+      "outputTokens": 25770,
+      "totalCost": 0.9414900750000001,
+      "totalTokens": 4942744,
+      "costCapturedAt": "2026-11-20 04:00"
+    },
+    {
+      "cacheCreationTokens": 8016,
+      "cacheReadTokens": 1212213,
+      "date": "2026-11-20",
+      "inputTokens": 182547,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 1212213,
+          "cost": 0.27864772500000007,
+          "inputTokens": 182544,
+          "modelName": "gemini-3.6-flash",
+          "outputTokens": 5293
+        },
+        {
+          "cacheCreationTokens": 8016,
+          "cacheReadTokens": 0,
+          "cost": 0.00090792,
+          "inputTokens": 3,
+          "modelName": "fusion",
+          "outputTokens": 13
+        }
+      ],
+      "modelsUsed": [
+        "gemini-3.6-flash",
+        "fusion"
+      ],
+      "outputTokens": 5306,
+      "totalCost": 0.2795556450000001,
+      "totalTokens": 1416342,
+      "costCapturedAt": "2026-11-20 04:00"
     }
   ],
   "totals": {
-    "inputTokens": 275912913,
-    "outputTokens": 24317827,
-    "cacheCreationTokens": 15955800,
-    "cacheReadTokens": 5103699421,
-    "totalTokens": 5420771658,
-    "totalCost": 3594.226221008899
+    "inputTokens": 276685956,
+    "outputTokens": 24348903,
+    "cacheCreationTokens": 15963816,
+    "cacheReadTokens": 5109217025,
+    "totalTokens": 5427130744,
+    "totalCost": 3595.4472667288987
   }
 }
