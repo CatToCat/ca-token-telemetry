@@ -4612,35 +4612,53 @@
       "costCapturedAt": "2026-11-23 03:00"
     },
     {
-      "cacheCreationTokens": 13229,
-      "cacheReadTokens": 0,
+      "cacheCreationTokens": 1101965,
+      "cacheReadTokens": 42992782,
       "date": "2026-11-23",
-      "inputTokens": 13235,
+      "inputTokens": 1384166,
       "modelBreakdowns": [
         {
-          "cacheCreationTokens": 13229,
-          "cacheReadTokens": 0,
-          "cost": 0.0022173975,
-          "inputTokens": 13235,
+          "cacheCreationTokens": 1101965,
+          "cacheReadTokens": 23798786,
+          "cost": 2.5640821125,
+          "inputTokens": 247862,
           "modelName": "fusion",
-          "outputTokens": 206
+          "outputTokens": 71674
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 13061078,
+          "cost": 1.6612116000000003,
+          "inputTokens": 851596,
+          "modelName": "gemini-3.6-flash",
+          "outputTokens": 9882
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 6132918,
+          "cost": 0.6964348499999998,
+          "inputTokens": 284708,
+          "modelName": "gemini-3.7-flash",
+          "outputTokens": 6116
         }
       ],
       "modelsUsed": [
-        "fusion"
+        "fusion",
+        "gemini-3.7-flash",
+        "gemini-3.6-flash"
       ],
-      "outputTokens": 206,
-      "totalCost": 0.0022173975,
-      "totalTokens": 26767,
-      "costCapturedAt": "2026-11-23 03:00"
+      "outputTokens": 87672,
+      "totalCost": 4.921728562499999,
+      "totalTokens": 45594294,
+      "costCapturedAt": "2026-11-24 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 510176754,
-    "outputTokens": 23781049,
-    "cacheCreationTokens": 15749350,
-    "cacheReadTokens": 7161759291,
-    "totalTokens": 7716382960,
-    "totalCost": 4600.593843145501
+    "inputTokens": 511547685,
+    "outputTokens": 23868515,
+    "cacheCreationTokens": 16838086,
+    "cacheReadTokens": 7204752073,
+    "totalTokens": 7761950487,
+    "totalCost": 4605.5133543105
   }
 }
