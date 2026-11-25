@@ -4677,34 +4677,34 @@
     },
     {
       "cacheCreationTokens": 121073,
-      "cacheReadTokens": 811413,
+      "cacheReadTokens": 1013397,
       "date": "2026-11-25",
-      "inputTokens": 1686,
+      "inputTokens": 49813,
       "modelBreakdowns": [
         {
           "cacheCreationTokens": 121073,
-          "cacheReadTokens": 811413,
-          "cost": 0.3107101050000001,
-          "inputTokens": 1686,
+          "cacheReadTokens": 1013397,
+          "cost": 0.3145751730000001,
+          "inputTokens": 49813,
           "modelName": "fusion",
-          "outputTokens": 14529
+          "outputTokens": 18042
         }
       ],
       "modelsUsed": [
         "fusion"
       ],
-      "outputTokens": 14529,
-      "totalCost": 0.3107101050000001,
-      "totalTokens": 951446,
-      "costCapturedAt": "2026-11-25 03:00"
+      "outputTokens": 18042,
+      "totalCost": 0.3145751730000001,
+      "totalTokens": 1205070,
+      "costCapturedAt": "2026-11-26 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 511821042,
-    "outputTokens": 23897098,
+    "inputTokens": 511869169,
+    "outputTokens": 23900611,
     "cacheCreationTokens": 17063911,
-    "cacheReadTokens": 7206439128,
-    "totalTokens": 7764176030,
-    "totalCost": 4605.8621327685005
+    "cacheReadTokens": 7206641112,
+    "totalTokens": 7764429654,
+    "totalCost": 4605.8659978365
   }
 }
