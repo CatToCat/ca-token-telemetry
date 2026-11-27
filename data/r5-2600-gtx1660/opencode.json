@@ -4720,14 +4720,87 @@
       "totalCost": 2.5039071539999997,
       "totalTokens": 25425446,
       "costCapturedAt": "2026-11-27 03:00"
+    },
+    {
+      "cacheCreationTokens": 2577805,
+      "cacheReadTokens": 51771333,
+      "date": "2026-11-27",
+      "inputTokens": 1124960,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 2187933,
+          "cacheReadTokens": 18787749,
+          "cost": 1.540092667499999,
+          "inputTokens": 369204,
+          "modelName": "fusion",
+          "outputTokens": 57017
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 20548096,
+          "cost": 0.24418605759999973,
+          "inputTokens": 750240,
+          "modelName": "deepseek-v4.1-flash-free",
+          "outputTokens": 52749
+        },
+        {
+          "cacheCreationTokens": 389872,
+          "cacheReadTokens": 12435488,
+          "cost": 0.20553948000000002,
+          "inputTokens": 5516,
+          "modelName": "gpt-6-luna",
+          "outputTokens": 31640
+        }
+      ],
+      "modelsUsed": [
+        "deepseek-v4.1-flash-free",
+        "fusion",
+        "gpt-6-luna"
+      ],
+      "outputTokens": 141406,
+      "totalCost": 1.9898182050999982,
+      "totalTokens": 55764794,
+      "costCapturedAt": "2026-11-28 03:00"
+    },
+    {
+      "cacheCreationTokens": 322102,
+      "cacheReadTokens": 9618858,
+      "date": "2026-11-28",
+      "inputTokens": 594502,
+      "modelBreakdowns": [
+        {
+          "cacheCreationTokens": 322102,
+          "cacheReadTokens": 6173738,
+          "cost": 0.3121383600000001,
+          "inputTokens": 461242,
+          "modelName": "fusion",
+          "outputTokens": 14360
+        },
+        {
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 3445120,
+          "cost": 0.04150255199999999,
+          "inputTokens": 133260,
+          "modelName": "deepseek-v4.1-flash-free",
+          "outputTokens": 11286
+        }
+      ],
+      "modelsUsed": [
+        "fusion",
+        "deepseek-v4.1-flash-free"
+      ],
+      "outputTokens": 25646,
+      "totalCost": 0.35364091200000014,
+      "totalTokens": 10567815,
+      "costCapturedAt": "2026-11-28 03:00"
     }
   ],
   "totals": {
-    "inputTokens": 512440551,
-    "outputTokens": 24001262,
-    "cacheCreationTokens": 18977445,
-    "cacheReadTokens": 7229458677,
-    "totalTokens": 7789855100,
-    "totalCost": 4608.369904990501
+    "inputTokens": 514160013,
+    "outputTokens": 24168314,
+    "cacheCreationTokens": 21877352,
+    "cacheReadTokens": 7290848868,
+    "totalTokens": 7856187709,
+    "totalCost": 4610.713364107601
   }
 }
